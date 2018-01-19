@@ -1,0 +1,11 @@
+{
+  "id": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE",
+  "name": "github-tools",
+  "friendlyName": "GitHub Tools",
+  "description": "Create and modify GitHub Releases",
+  "author": "marcelo-formentao",
+  "helpMarkDown":
+    "[More Information](https://github.com/marceloavf/github-tools-vsts)",
+  "category": "Utility",
+  "visibility": ["Build", "Release"]
+}
