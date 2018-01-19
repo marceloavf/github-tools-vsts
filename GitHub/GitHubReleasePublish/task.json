@@ -3,9 +3,107 @@
   "name": "github-tools",
   "friendlyName": "GitHub Tools",
   "description": "Create and modify GitHub Releases",
-  "author": "marcelo-formentao",
+  "author": "Marcelo Formentão",
   "helpMarkDown":
     "[More Information](https://github.com/marceloavf/github-tools-vsts)",
   "category": "Utility",
-  "visibility": ["Build", "Release"]
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "inputs": [
+    {
+      "name": "githubEndpoint",
+      "type": "connectedService:github",
+      "label": "GitHub Connection",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown":
+        "Select the service endpoint for your GitHub connection. To create one, click the Manage link and create a new service endpoint."
+    },
+    {
+      "name": "githubRepository",
+      "type": "pickList",
+      "label": "Repository",
+      "defaultValue": "",
+      "helpMarkDown":
+        "Name of the GitHub repository. If empty, it will be extracted from package.json (the repository.url field).",
+      "properties": {
+        "DisableManageLink": "True"
+      }
+    },
+    {
+      "name": "githubTag",
+      "type": "string",
+      "label": "Tag",
+      "helpMarkDown":
+        "Tag to release, value should be v$(Build.BuildNumber) for release current build, for example: v1.0.0. If empty, the version will be extracted from package.json and prepended by a 'v'."
+    },
+    {
+      "name": "githubReleaseTitle",
+      "type": "string",
+      "label": "Release title",
+      "required": true,
+      "helpMarkDown": "Release title. If empty, it will be the same as the tag."
+    },
+    {
+      "name": "githubReleaseNotes",
+      "type": "multiLine",
+      "label": "Release notes",
+      "helpMarkDown":
+        "Release notes. If empty, GitHub will use the last commit message.",
+      "properties": {
+        "resizable": "true",
+        "rows": "2"
+      }
+    },
+    {
+      "name": "githubReleaseDraft",
+      "type": "boolean",
+      "label": "Release as Draft",
+      "defaultValue": "true",
+      "required": true,
+      "helpMarkDown": "Release as Draft"
+    },
+    {
+      "name": "githubReleasePrerelease",
+      "type": "boolean",
+      "label": "Release as Pre-release",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Release tagged as Pre-release"
+    },
+    {
+      "name": "manifestJson",
+      "type": "filePath",
+      "label": "Package.json",
+      "helpMarkDown": "File from which default values will be extracted if options are missing."
+    },
+    {
+      "name": "githubReleaseAsset",
+      "type": "filePath",
+      "label": "File to upload as asset",
+      "required": false,
+      "helpMarkDown": "The file to upload as artifacts to the release."
+    }
+  ],
+  "instanceNameFormat": "Create a GitHub Release",
+  "sourceDefinitions": [
+    {
+      "target": "githubRepository",
+      "endpoint":
+        "/$(system.teamProject)/_apis/sourceProviders/GitHub/repositories?serviceEndpointId=$(githubEndpoint)",
+      "selector": "jsonpath:$.value[*].id",
+      "keySelector": "jsonpath:$.value[*].id",
+      "authKey": "tfs:teamfoundation"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "github-release-publish.js",
+      "workingDirectory": "$(currentDirectory)",
+      "argumentFormat": ""
+    }
+  }
 }
