@@ -1,0 +1,83 @@
+{
+  "manifestVersion": 1,
+  "id": "github-tools",
+  "version": "0.1.0",
+  "name": "GitHub Tools",
+  "description": "Create and modify GitHub Releases in VSTS",
+  "publisher": "Marcelo Formentão",
+  "public": "true",
+  "icons": {
+    "default": "Images/Icon128.png",
+    "large": "Images/Icon512.png"
+  },
+  "screenshots": [
+    {
+      "path": "Images/screen1.png"
+    },
+    {
+      "path": "Images/screen2.png"
+    }
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": ["GitHub", "Modify Release", "Release"],
+  "categories": ["Build and release"],
+  "content": {
+    "license": {
+      "path": "license.md"
+    },
+    "details": {
+      "path": "overview.md"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/marceloavf/github-tools-vsts"
+    },
+    "issues": {
+      "uri": "https://github.com/marceloavf/github-tools-vsts/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/marceloavf/github-tools-vsts"
+  },
+  "branding": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "files": [
+    {
+      "path": "GitHubReleasePublish"
+    },
+    {
+      "path": "GitHubReleaseModify"
+    },
+    {
+      "path": "Images",
+      "addressable": true
+    }
+  ],
+  "scopes": ["vso.build_execute", "vso.serviceendpoint_manage"],
+  "contributions": [
+    {
+      "id": "GitHub-Release-Publish",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "GitHubReleasePublish"
+      }
+    },
+    {
+      "id": "GitHub-Release-Modify",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "type": "ms.vss-distributed-task.task",
+      "properties": {
+        "name": "GitHubReleaseModify"
+      }
+    }
+  ]
+}
