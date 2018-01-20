@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "package": "tfx extension create",
+    "gallery-publish": "tfx extension publish --rev-version",
+    "clean": "rimraf ./dist && rimraf ./*.vsix"
+  },
+  "devDependencies": {
+    "tfx-cli": "^0.5.3"
+  },
+  "dependencies": {
+    "gulp-github-release": "^1.2.1",
+    "vsts-task-lib": "^2.1.0"
+  }
+}
