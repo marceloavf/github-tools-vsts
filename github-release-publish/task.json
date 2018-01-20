@@ -1,8 +1,8 @@
 {
   "id": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE",
   "name": "github-tools",
-  "friendlyName": "GitHub Tools",
-  "description": "Create and modify GitHub Releases",
+  "friendlyName": "Create GitHub Release",
+  "description": "Create and publish GitHub Release and upload assets, accepting manifest content",
   "author": "Marcelo Formentão",
   "helpMarkDown":
     "[More Information](https://github.com/marceloavf/github-tools-vsts)",
@@ -10,7 +10,7 @@
   "version": {
     "Major": 0,
     "Minor": 1,
-    "Patch": 0
+    "Patch": 7
   },
   "inputs": [
     {
@@ -21,6 +21,13 @@
       "required": true,
       "helpMarkDown":
         "Select the service endpoint for your GitHub connection. To create one, click the Manage link and create a new service endpoint."
+    },
+    {
+      "name": "manifestJson",
+      "type": "filePath",
+      "label": "Package.json",
+      "helpMarkDown":
+        "File from which default values will be extracted if options are missing."
     },
     {
       "name": "githubRepository",
@@ -44,7 +51,6 @@
       "name": "githubReleaseTitle",
       "type": "string",
       "label": "Release title",
-      "required": true,
       "helpMarkDown": "Release title. If empty, it will be the same as the tag."
     },
     {
@@ -75,20 +81,14 @@
       "helpMarkDown": "Release tagged as Pre-release"
     },
     {
-      "name": "manifestJson",
-      "type": "filePath",
-      "label": "Package.json",
-      "helpMarkDown": "File from which default values will be extracted if options are missing."
-    },
-    {
       "name": "githubReleaseAsset",
       "type": "filePath",
       "label": "File to upload as asset",
-      "required": false,
+      "required": true,
       "helpMarkDown": "The file to upload as artifacts to the release."
     }
   ],
-  "instanceNameFormat": "Create a GitHub Release",
+  "instanceNameFormat": "Create GitHub Release",
   "sourceDefinitions": [
     {
       "target": "githubRepository",
