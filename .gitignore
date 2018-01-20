@@ -23,6 +23,7 @@ gulp-tsc-tmp-*
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
+[Dd]ist/
 x64/
 build/
 bld/
@@ -207,3 +208,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 /Package
+
+# Package generated files
+*.vsix
