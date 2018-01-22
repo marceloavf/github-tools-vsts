@@ -5,15 +5,7 @@ const tl = require('vsts-task-lib/task');
 const gulp = tl.which('gulp', true);
 tl.debug('check path : ' + gulp);
 if (!tl.exist(gulp)) {
-  tl.debug('not found global installed gulp, try to find gulp locally.');
-  const gulpExec = tl.createToolRunner(tl.which('node', true));
-  const gulpjs = tl.getInput('gulpjs', true);
-  gulpjs = path.resolve(cwd, gulpjs);
-  tl.debug('check path : ' + gulpjs);
-  if (!tl.exist(gulpjs)) {
-    tl.setResult(tl.TaskResult.Failed, tl.loc('GulpNotInstalled', gulpjs));
-  }
-  gulpExec.pathArg(gulpjs);
+  tl.setResult(tl.TaskResult.Failed, "Gulp not installed");
 } else {
   const gulpExec = tl.createToolRunner(gulp);
 }
