@@ -1,0 +1,62 @@
+{
+  "manifestVersion": 1,
+  "id": "github-tools",
+  "version": "0.1.7",
+  "name": "GitHub Tools",
+  "description": "Create and modify GitHub Releases in VSTS",
+  "publisher": "marcelo-formentao",
+  "public": "true",
+  "icons": {
+    "default": "images/icon128.png",
+    "large": "images/icon512.png"
+  },
+  "screenshots": [
+    {
+      "path": "images/screen1.png"
+    },
+    {
+      "path": "images/screen2.png"
+    }
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": ["GitHub", "Modify Release", "Release"],
+  "categories": ["Build and release"],
+  "content": {
+    "license": {
+      "path": "LICENSE.txt"
+    },
+    "details": {
+      "path": "overview.md"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://github.com/marceloavf/github-tools-vsts"
+    },
+    "issues": {
+      "uri": "https://github.com/marceloavf/github-tools-vsts/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/marceloavf/github-tools-vsts"
+  },
+  "branding": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "files": [
+    {
+      "path": "Tasks"
+    },
+    {
+      "path": "images",
+      "addressable": true
+    }
+  ],
+  "scopes": ["vso.build_execute", "vso.serviceendpoint_manage"]
+}
