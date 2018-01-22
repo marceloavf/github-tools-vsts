@@ -249,7 +249,6 @@ ModelManifest.xml
 Tests/**/*.js
 Tests/**/*.js.map
 Tests/**/*.d.ts
-Tasks/**/*.js
 Tasks/**/*.js.map
 Tasks/**/*.d.ts
 Tasks/*/common/**/*.*
