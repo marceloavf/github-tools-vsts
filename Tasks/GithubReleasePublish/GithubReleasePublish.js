@@ -6,8 +6,9 @@ const gulp = tl.which('gulp', true);
 const gulpExec = tl.tool(gulp);
 
 // Endpoint
-const githubEndpointUrl = tl.getEndpointUrl('githubEndpoint');
-const githubEndpointToken = tl.getEndpointAuthorization('githubEndpoint');
+const githubEndpoint = tl.getInput('githubEndpoint');
+const githubEndpointUrl = tl.getEndpointUrl(githubEndpoint);
+const githubEndpointToken = tl.getEndpointAuthorization(githubEndpoint);
 // Inputs
 const githubRepository = tl.getInput('githubRepository').split('/');
 const githubTag = tl.getInput('githubTag');
