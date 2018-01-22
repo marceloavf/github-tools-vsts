@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "github-tools",
-  "version": "0.1.7",
+  "version": "0.0.0",
   "name": "GitHub Tools",
   "description": "Create and modify GitHub Releases in VSTS",
   "publisher": "marcelo-formentao",
