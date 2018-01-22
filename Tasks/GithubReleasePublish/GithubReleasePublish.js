@@ -1,14 +1,9 @@
 const release = require('gulp-github-release');
 const tl = require('vsts-task-lib/task');
 
-// Gulp check
+// Check if gulp exists and create the tool runner
 const gulp = tl.which('gulp', true);
-tl.debug('check path : ' + gulp);
-if (!tl.exist(gulp)) {
-  tl.setResult(tl.TaskResult.Failed, "Gulp not installed");
-} else {
-  const gulpExec = tl.createToolRunner(gulp);
-}
+const gulpExec = tl.tool(gulp);
 
 // Endpoint
 const githubEndpointUrl = tl.getEndpointUrl('githubEndpoint');
