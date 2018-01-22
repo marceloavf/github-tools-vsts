@@ -6,7 +6,7 @@
       "VssExtensionGalleryFlags": ["Public", "Preview"],
       "DisplayNamesSuffix": "",
       "TaskIds": {
-        "GitHubReleasePublish": "C2CF520F-2B1B-43B6-8B82-761FDD7C48CE"
+        "GithubReleasePublish": "C2CF520F-2B1B-43B6-8B82-761FDD7C48CE"
       }
     },
     {
@@ -15,7 +15,7 @@
       "VssExtensionGalleryFlags": [],
       "DisplayNamesSuffix": " (Preview)",
       "TaskIds": {
-        "GitHubReleasePublish": "C3164D71-2259-43B8-9702-1BE0B393BDB9"
+        "GithubReleasePublish": "C3164D71-2259-43B8-9702-1BE0B393BDB9"
       }
     },
     {
@@ -24,7 +24,7 @@
       "VssExtensionGalleryFlags": [],
       "DisplayNamesSuffix": " (Development)",
       "TaskIds": {
-        "GitHubReleasePublish": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE"
+        "GithubReleasePublish": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE"
       }
     }
   ]
