@@ -1,8 +1,9 @@
 {
   "id": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE",
-  "name": "github-tools",
+  "name": "GitHubReleasePublish",
   "friendlyName": "Create GitHub Release",
-  "description": "Create and publish GitHub Release and upload assets, accepting manifest content",
+  "description":
+    "Create and publish GitHub Release and upload assets, checking manifest content",
   "author": "Marcelo Formentão",
   "helpMarkDown":
     "[More Information](https://github.com/marceloavf/github-tools-vsts)",
@@ -12,6 +13,7 @@
     "Minor": 1,
     "Patch": 7
   },
+  "instanceNameFormat": "Create GitHub Release",
   "inputs": [
     {
       "name": "githubEndpoint",
@@ -88,7 +90,6 @@
       "helpMarkDown": "The file to upload as artifacts to the release."
     }
   ],
-  "instanceNameFormat": "Create GitHub Release",
   "sourceDefinitions": [
     {
       "target": "githubRepository",
@@ -101,8 +102,7 @@
   ],
   "execution": {
     "Node": {
-      "target": "github-release-publish.js",
-      "workingDirectory": "$(currentDirectory)",
+      "target": "GithubReleasePublish.js",
       "argumentFormat": ""
     }
   }
