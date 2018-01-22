@@ -211,3 +211,6 @@ ModelManifest.xml
 
 # Package generated files
 *.vsix
+
+# Output folders
+.BuildOutput
