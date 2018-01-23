@@ -19,11 +19,11 @@
     {
       "name": "githubEndpoint",
       "type": "connectedService:github",
-      "label": "GitHub Connection",
+      "label": "GitHub connection",
       "defaultValue": "",
       "required": true,
       "helpMarkDown":
-        "Select the service endpoint for your GitHub connection. To create one, click the Manage link and create a new service endpoint."
+        "Select the service endpoint for your GitHub connection. <br>To create one, click the Manage link and create a new service endpoint."
     },
     {
       "name": "manifestJson",
@@ -39,7 +39,7 @@
       "label": "Repository",
       "defaultValue": "",
       "helpMarkDown":
-        "Name of the GitHub repository. If empty, it will be extracted from package.json (the repository.url field).",
+        "Name of the GitHub repository. <br>If empty, it will be extracted from <strong>package.json</strong> (the repository.url field).",
       "properties": {
         "DisableManageLink": "True"
       }
@@ -50,14 +50,15 @@
       "label": "Tag",
       "defaultValue": "v$(Build.BuildNumber)",
       "helpMarkDown":
-        "Tag to release, value should be v$(Build.BuildNumber) for release current build, for example: v1.0.0. If empty, the version will be extracted from package.json and prepended by a 'v'."
+        "Tag to release, value should be <strong>v$(Build.BuildNumber)</strong> for release current build, for example: v1.0.0. <br>If empty, the version will be extracted from <strong>package.json</strong> and prepended by a 'v'."
     },
     {
       "name": "githubReleaseTitle",
       "type": "string",
       "label": "Release title",
       "defaultValue": "v$(Build.BuildNumber)",
-      "helpMarkDown": "Release title. If empty, it will be the same as the tag."
+      "helpMarkDown":
+        "Release title. <br>If empty, it will be the same as the tag."
     },
     {
       "name": "githubReleaseNotes",
@@ -65,7 +66,7 @@
       "label": "Release notes",
       "defaultValue": "",
       "helpMarkDown":
-        "Release notes. If empty, GitHub will use the last commit message.",
+        "Release notes. <br>If missing it will be left undefined.",
       "properties": {
         "resizable": "true",
         "rows": "2"
