@@ -4,7 +4,7 @@ const tl = require('vsts-task-lib/task');
 
 // Endpoint
 const githubEndpoint = tl.getInput('githubEndpoint');
-const githubEndpointToken = tl.getEndpointAuthorization(githubEndpoint);
+const githubEndpointToken = tl.getEndpointAuthorization(githubEndpoint).parameters.accessToken;
 // Inputs
 const githubRepository = tl.getInput('githubRepository').split('/');
 const githubTag = tl.getInput('githubTag');
@@ -26,7 +26,7 @@ gulp.src(githubReleaseAsset).pipe(
     repo: githubRepository[1], // if missing, it will be extracted from manifest (the repository.url field)
     tag: githubTag, // if missing, the version will be extracted from manifest and prepended by a 'v'
     name: githubReleaseTitle, // if missing, it will be the same as the tag
-    notes: githubReleaseNotes, // if missing it will be left undefined
+    notes: githubReleaseNotes ? githubReleaseNotes : '', // if missing it will be left undefined
     draft: githubReleaseDraft, // if missing it's false
     prerelease: githubReleasePrerelease, // if missing it's false
     manifest: isJson(manifestJson) ? require(manifestJson) : null // package.json from which default values will be extracted if they're missing
