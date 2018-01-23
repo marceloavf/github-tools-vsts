@@ -108,7 +108,7 @@
   ],
   "execution": {
     "Node": {
-      "target": "GithubReleasePublish.js",
+      "target": "githubReleasePublish.js",
       "argumentFormat": ""
     }
   }
