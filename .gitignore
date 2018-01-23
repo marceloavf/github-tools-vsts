@@ -254,3 +254,4 @@ Tasks/**/*.d.ts
 Tasks/*/common/**/*.*
 
 .BuildOutput
+.taskkey
