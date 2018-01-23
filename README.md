@@ -1,8 +1,7 @@
 <h1 align="center">
-![Icon](https://github.com/marceloavf/github-tools-vsts/blob/master/Extension/images/icon128.png)
+<a href="https://github.com/marceloavf/github-tools-vsts/"><img src="https://github.com/marceloavf/github-tools-vsts/blob/master/Extension/images/icon512.png" alt="GitHub Tools" width="200"></a>
 <br>
 GitHub Tools
-<br>
 <br>
 </h1>
 
