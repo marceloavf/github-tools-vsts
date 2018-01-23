@@ -4,7 +4,7 @@
     "postinstall": "vsts-build-tools-install",
     "prebuild": "vsts-build-tools-prebuild",
     "build": "tsc",
-    "package": "vsts-build-tools-package"
+    "package": "vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
