@@ -10,14 +10,6 @@
     "default": "images/icon128.png",
     "large": "images/icon512.png"
   },
-  "screenshots": [
-    {
-      "path": "images/screen1.png"
-    },
-    {
-      "path": "images/screen2.png"
-    }
-  ],
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
