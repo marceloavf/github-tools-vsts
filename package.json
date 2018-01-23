@@ -3,8 +3,9 @@
     "clean": "vsts-build-tools-clean",
     "postinstall": "vsts-build-tools-install",
     "prebuild": "vsts-build-tools-prebuild",
-    "build": "tsc",
-    "package": "vsts-build-tools-package --noversiontransform"
+    "lint": "eslint --fix Tasks",
+    "test": "npm run lint",
+    "package": "npm run clean && vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
@@ -12,8 +13,14 @@
     "@types/node": "^6.0.0",
     "@types/q": "^1.0.3",
     "async": "^2.6.0",
-    "npm-run-all": "2.3.0",
-    "gl-vsts-tasks-build-scripts": "^0.4.0-alpha.4"
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "gl-vsts-tasks-build-scripts": "^0.4.0-alpha.4",
+    "npm-run-all": "2.3.0"
   },
   "license": "MIT",
   "repository": {
@@ -22,6 +29,5 @@
   },
   "bugs": {
     "url": "https://github.com/marceloavf/github-tools-vsts/issues"
-  },
-  "dependencies": {}
+  }
 }
