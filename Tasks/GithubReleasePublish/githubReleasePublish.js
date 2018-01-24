@@ -80,6 +80,9 @@ release.on('error', existingError => {
   }
 })
 
+/**
+ * TODO: dynamic 'github.com' url since you can change API URL with parameters
+ */
 release.on('created-release', () => {
   tl.debug(
     `Release created successfully at
