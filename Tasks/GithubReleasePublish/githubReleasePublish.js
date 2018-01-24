@@ -24,6 +24,18 @@ const manifestJson = tl.getPathInput('manifestJson')
 const githubReleaseAsset = tl.getPathInput('githubReleaseAsset')
 
 /**
+ * Convert bytes to MB, KB, etc.
+ * @param {*} bytes
+ */
+const bytesToSize = bytes => {
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+  if (bytes === 0) return 'n/a'
+  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
+  if (i === 0) return `${bytes} ${sizes[i]})`
+  return `${(bytes / 1024 ** i).toFixed(1)} ${sizes[i]}`
+}
+
+/**
  * Read a manifest file and return the repository url with
  * Url [0], Owner [1] and Repo [2] in array
  * @param {*} file => .json file
@@ -68,8 +80,9 @@ const options = {
 const release = publishRelease(options, (err, release) => {
   if (err) {
     tl.debug(err)
+    return false
   }
-  tl.debug(release)
+  tl.debug(`Finish - Release URL: ${release.url}`)
 })
 
 release.on('error', existingError => {
@@ -97,5 +110,5 @@ release.on('reuse-release', () => {
 })
 
 release.on('upload-progress', (name, progress) => {
-  tl.debug(`Uploading asset ${name} - ${progress}`)
+  tl.debug(`Uploading asset ${name} - ${Math.floor(progress.percentage)}% - ${bytesToSize(progress.speed)}/s`)
 })
