@@ -36,19 +36,21 @@ const bytesToSize = bytes => {
 }
 
 /**
- * Read a manifest file and return the repository url with
- * Url [0], Owner [1] and Repo [2] in array
+ * Read a manifest file and return necessary items in object
  * @param {*} file => .json file
+ * TODO: dynamic 'github.com' url since you can change API URL with parameters
  */
 const readManifest = file => {
   const isJson = path => /^(.*\.json$).*$/.test(path)
   if (isJson(file)) {
+    let obj = {}
     const fileContent = JSON.parse(fs.readFileSync(file))
-    const repository =
+    const repo =
       fileContent &&
       fileContent.repository &&
       /github\.com:?\/?([\w-]+)\/([\w-]+)/.exec(fileContent.repository.url)
-    return repository
+    obj = { owner: repo[1], repo: repo[2], version: fileContent.version }
+    return obj
   }
   return false
 }
@@ -56,27 +58,35 @@ const readManifest = file => {
 /** Check for options in manifest if they don't exists on input */
 const manifestOptions = readManifest(manifestJson)
 
-const options = {
-  token: githubEndpointToken || process.env.GITHUB_TOKEN, // or you can set an env var called GITHUB_TOKEN instead
-  owner:
-    (githubRepository && githubRepository[0]) ||
-    manifestOptions[1] || // if missing, it will be extracted from manifest (the repository.url field)
-    undefined,
-  repo:
-    (githubRepository && githubRepository[1]) ||
-    manifestOptions[2] || // if missing, it will be extracted from manifest (the repository.url field)
-    undefined,
-  tag: githubTag, // if missing, the version will be extracted from manifest and prepended by a 'v'
-  name: githubReleaseTitle, // if missing, it will be the same as the tag
-  notes: githubReleaseNotes || '', // if missing it will be left undefined
-  draft: githubReleaseDraft, // if missing it's false
-  prerelease: githubReleasePrerelease, // if missing it's false
-  reuseRelease: true, // if you don't want the plugin to create a new release if one already exists for the given tag.
-  reuseDraftOnly: true, // if you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
-  assets: [githubReleaseAsset], // assets array
-  apiUrl: 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
-}
+/**
+ * Set all options
+ */
+let options = {}
+options.token = githubEndpointToken || process.env.GITHUB_TOKEN // or you can set an env var called GITHUB_TOKEN instead
+options.owner =
+  (githubRepository && githubRepository[0]) ||
+  manifestOptions.owner || // if missing, it will be extracted from manifest (the repository.url field)
+  undefined
+options.repo =
+  (githubRepository && githubRepository[1]) ||
+  manifestOptions.repo || // if missing, it will be extracted from manifest (the repository.url field)
+  undefined
+options.tag =
+  githubTag ||
+  (manifestOptions && `v${manifestOptions.version}`) ||
+  undefined // if missing, the version will be extracted from manifest and prepended by a 'v'
+options.name = githubReleaseTitle || options.tag || undefined // if missing, it will be the same as the tag
+options.notes = githubReleaseNotes || undefined // if missing it will be left undefined
+options.draft = githubReleaseDraft // if missing it's false
+options.prerelease = githubReleasePrerelease // if missing it's false
+options.reuseRelease = true // if you don't want the plugin to create a new release if one already exists for the given tag.
+options.reuseDraftOnly = true // if you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
+options.assets = [githubReleaseAsset] // assets array
+options.apiUrl = 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
 
+/**
+ * Start the release
+ */
 const release = publishRelease(options, (err, release) => {
   if (err) {
     tl.debug(err)
@@ -110,5 +120,9 @@ release.on('reuse-release', () => {
 })
 
 release.on('upload-progress', (name, progress) => {
-  tl.debug(`Uploading asset ${name} - ${Math.floor(progress.percentage)}% - ${bytesToSize(progress.speed)}/s`)
+  tl.debug(
+    `Uploading asset ${name} - ${Math.floor(
+      progress.percentage
+    )}% - ${bytesToSize(progress.speed)}/s`
+  )
 })
