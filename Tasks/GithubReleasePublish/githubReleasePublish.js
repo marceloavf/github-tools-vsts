@@ -57,7 +57,7 @@ const readManifest = file => {
 const manifestOptions = readManifest(manifestJson)
 
 const options = {
-  token: githubEndpointToken, // or you can set an env var called GITHUB_TOKEN instead
+  token: githubEndpointToken || process.env.GITHUB_TOKEN, // or you can set an env var called GITHUB_TOKEN instead
   owner:
     (githubRepository && githubRepository[0]) ||
     manifestOptions[1] || // if missing, it will be extracted from manifest (the repository.url field)
