@@ -73,12 +73,12 @@ options.repo =
   undefined
 options.tag =
   githubTag ||
-  (manifestOptions && `v${manifestOptions.version}`) ||
-  undefined // if missing, the version will be extracted from manifest and prepended by a 'v'
+  (manifestOptions && `v${manifestOptions.version}`) || // if missing, the version will be extracted from manifest and prepended by a 'v'
+  undefined
 options.name = githubReleaseTitle || options.tag || undefined // if missing, it will be the same as the tag
 options.notes = githubReleaseNotes || undefined // if missing it will be left undefined
-options.draft = githubReleaseDraft // if missing it's false
-options.prerelease = githubReleasePrerelease // if missing it's false
+options.draft = githubReleaseDraft || false // if missing it's false
+options.prerelease = githubReleasePrerelease || false // if missing it's false
 options.reuseRelease = true // if you don't want the plugin to create a new release if one already exists for the given tag.
 options.reuseDraftOnly = true // if you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
 options.assets = [githubReleaseAsset] // assets array
