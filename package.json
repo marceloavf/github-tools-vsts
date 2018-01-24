@@ -3,8 +3,11 @@
     "clean": "vsts-build-tools-clean",
     "postinstall": "vsts-build-tools-install",
     "prebuild": "vsts-build-tools-prebuild",
-    "lint": "eslint --fix Tasks",
+    "lint": "eslint Tasks",
     "test": "npm run lint",
+    "dev": "node Tasks/GithubReleasePublish/githubReleasePublish.js",
+    "dev:debug": "node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
+    "build": "tsc",
     "package": "npm run clean && vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
