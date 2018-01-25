@@ -3,12 +3,12 @@
     "clean": "vsts-build-tools-clean",
     "postinstall": "vsts-build-tools-install",
     "prebuild": "vsts-build-tools-prebuild",
-    "lint": "eslint Tasks",
+    "lint": "eslint Src",
     "test": "npm run lint",
-    "dev": "node Tasks/GithubReleasePublish/githubReleasePublish.js",
-    "dev:debug": "node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
-    "build": "tsc",
-    "package": "npm run clean && vsts-build-tools-package --noversiontransform"
+    "dev": "node Src/GithubReleasePublish/githubReleasePublish.js",
+    "dev:debug": "node --inspect-brk Src/GithubReleasePublish/githubReleasePublish.js",
+    "build": "node Config/build.js",
+    "package": "npm run build && npm run clean && vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
@@ -21,6 +21,7 @@
     "cfonts": "^1.1.3",
     "chalk": "^2.3.0",
     "child_process": "^1.0.2",
+    "copy-webpack-plugin": "^4.3.1",
     "del": "^3.0.0",
     "eslint": "^4.16.0",
     "eslint-config-standard": "^11.0.0-beta.0",
@@ -31,6 +32,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "gl-vsts-tasks-build-scripts": "^0.4.0-alpha.4",
+    "imagemin-webpack-plugin": "^1.6.1",
     "multispinner": "^0.2.1",
     "npm-run-all": "2.3.0",
     "path": "^0.12.7",

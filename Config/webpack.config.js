@@ -5,8 +5,16 @@ process.env.BABEL_ENV = 'main'
 const path = require('path')
 const webpack = require('webpack')
 
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+
 let mainConfig = {
-  entry: path.join(__dirname, '../Src/GithubReleasePublish/githubReleasePublish.js'),
+  entry: {
+    'GithubReleasePublish/githubReleasePublish': path.join(
+      __dirname,
+      '../Src/GithubReleasePublish/githubReleasePublish.js'
+    )
+  },
   output: {
     path: path.join(__dirname, '../Tasks'),
     libraryTarget: 'commonjs2',
@@ -41,7 +49,19 @@ let mainConfig = {
     __dirname: process.env.NODE_ENV !== 'production',
     __filename: process.env.NODE_ENV !== 'production'
   },
-  plugins: [new webpack.NoEmitOnErrorsPlugin()],
+  plugins: [
+    new webpack.NoEmitOnErrorsPlugin(),
+    // Copy the images folder and optimize all the images
+    new CopyWebpackPlugin([
+      {
+        from: path.join(__dirname, '../Src'),
+        to: '[path][name].[ext]',
+        ignore: ['**/node_modules/**', '**/*.js']
+      }
+    ]),
+    // Optimize all images on copy
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+  ],
   resolve: {
     extensions: ['.js', '.json', '.node']
   }
