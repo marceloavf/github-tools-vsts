@@ -255,7 +255,7 @@ Tasks/*/common/**/*.*
 .BuildOutput
 .taskkey
 
-!.gitkeep
-
 # Build output
 Tasks/*
+
+!.gitkeep
