@@ -245,7 +245,6 @@ ModelManifest.xml
 .fake/
 /tests/GeekLearning.Integration.Test/appsettings.development.json
 
-
 Tests/**/*.js
 Tests/**/*.js.map
 Tests/**/*.d.ts
@@ -255,3 +254,8 @@ Tasks/*/common/**/*.*
 
 .BuildOutput
 .taskkey
+
+!.gitkeep
+
+# Build output
+Tasks/*
