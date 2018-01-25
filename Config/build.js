@@ -16,18 +16,21 @@ const isCI = process.env.CI || false
 /** The main build tasks */
 const mainConfig = require('./webpack.config')
 
-if (process.env.BUILD_TARGET === 'clean') clean()
+if (process.env.BUILD_TARGET === 'clean') clean(true)
 else build()
 
 /** Clean the Tasks output folder */
-function clean () {
+function clean (exit) {
   del.sync(['Tasks/*', '!Tasks/.gitkeep'])
-  console.log(`\n${doneLog}\n`)
-  process.exit()
+  console.log(`\n${doneLog} Clean\n`)
+  if (exit) {
+    process.exit()
+  }
 }
 
 function build () {
   greeting()
+  clean()
 
   const tasks = ['main']
   const m = new Multispinner(tasks, {
