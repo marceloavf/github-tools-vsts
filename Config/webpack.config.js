@@ -7,6 +7,7 @@ const webpack = require('webpack')
 
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 let mainConfig = {
   entry: {
@@ -51,6 +52,7 @@ let mainConfig = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
+    new UglifyJsPlugin(),
     // Copy the images folder and optimize all the images
     new CopyWebpackPlugin([
       {
