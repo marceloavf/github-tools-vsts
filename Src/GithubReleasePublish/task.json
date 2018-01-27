@@ -13,7 +13,7 @@
     "Minor": 0,
     "Patch": 0
   },
-  "demands": ["npm", "gulp"],
+  "demands": ["npm"],
   "instanceNameFormat": "Create GitHub Release",
   "inputs": [
     {
