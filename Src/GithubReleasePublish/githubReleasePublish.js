@@ -62,7 +62,8 @@ const manifestOptions = readManifest(manifestJson)
  * Set all options
  */
 let options = {}
-options.token = githubEndpointToken || process.env.GITHUB_TOKEN // or you can set an env var called GITHUB_TOKEN instead
+options.token =
+  githubEndpointToken || process.env.GITHUB_TOKEN || process.env.GH_TOKEN // or you can set an env var called GITHUB_TOKEN instead
 options.owner =
   (githubRepository && githubRepository[0]) ||
   manifestOptions.owner || // if missing, it will be extracted from manifest (the repository.url field)
