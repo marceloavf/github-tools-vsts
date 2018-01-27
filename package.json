@@ -5,10 +5,15 @@
     "prebuild": "vsts-build-tools-prebuild",
     "lint": "eslint Src",
     "test": "npm run lint",
-    "dev": "node Src/GithubReleasePublish/githubReleasePublish.js",
-    "dev:debug": "node --inspect-brk Src/GithubReleasePublish/githubReleasePublish.js",
+    "dev:webpack":
+      "webpack --progress --colors --config Config/webpack.config.js",
+    "dev":
+      "npm run dev:webpack && node Tasks/GithubReleasePublish/githubReleasePublish.js",
+    "dev:debug":
+      "npm run dev:webpack && node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
     "build": "node Config/build.js",
-    "package": "npm run build && npm run clean && vsts-build-tools-package --noversiontransform"
+    "package":
+      "npm run build && npm run clean && vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
