@@ -62,6 +62,9 @@ let mainConfig = {
     ])
   ],
   resolve: {
+    alias: {
+      'CommonNode': path.join(__dirname, '../Common/Node')
+    },
     extensions: ['.js', '.json', '.node']
   }
 }
@@ -70,9 +73,7 @@ let mainConfig = {
  * Adjust mainConfig for development settings
  */
 if (process.env.NODE_ENV !== 'production') {
-  mainConfig.plugins.push(
-    new webpack.HotModuleReplacementPlugin()
-  )
+  mainConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
 /**

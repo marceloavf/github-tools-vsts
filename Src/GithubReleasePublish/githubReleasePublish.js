@@ -1,6 +1,8 @@
+import readManifest from 'CommonNode/readManifest.js'
+import bytesToSize from 'CommonNode/bytesToSize.js'
+
 const publishRelease = require('publish-release')
 const tl = require('vsts-task-lib/task')
-const fs = require('fs')
 
 /** Endpoint */
 const githubEndpoint = tl.getInput('githubEndpoint')
@@ -22,38 +24,6 @@ const githubReleasePrerelease = tl.getBoolInput('githubReleasePrerelease')
 /** Paths */
 const manifestJson = tl.getPathInput('manifestJson')
 const githubReleaseAsset = tl.getPathInput('githubReleaseAsset')
-
-/**
- * Convert bytes to MB, KB, etc.
- * @param {*} bytes
- */
-const bytesToSize = bytes => {
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
-  if (bytes === 0) return 'n/a'
-  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
-  if (i === 0) return `${bytes} ${sizes[i]})`
-  return `${(bytes / 1024 ** i).toFixed(1)} ${sizes[i]}`
-}
-
-/**
- * Read a manifest file and return necessary items in object
- * @param {*} file => .json file
- * TODO: dynamic 'github.com' url since you can change API URL with parameters
- */
-const readManifest = file => {
-  const isJson = path => /^(.*\.json$).*$/.test(path)
-  if (isJson(file)) {
-    let obj = {}
-    const fileContent = JSON.parse(fs.readFileSync(file))
-    const repo =
-      fileContent &&
-      fileContent.repository &&
-      /github\.com:?\/?([\w-]+)\/([\w-]+)/.exec(fileContent.repository.url)
-    obj = { owner: repo[1], repo: repo[2], version: fileContent.version }
-    return obj
-  }
-  return false
-}
 
 /** Check for options in manifest if they don't exists on input */
 const manifestOptions = readManifest(manifestJson)
@@ -117,6 +87,12 @@ release.on('created-release', () => {
   )
 })
 
+/**
+ * TODO: Analyse options to return the correct message, e.g.
+ * IF reuseDraftOnly is true and reuseRelease is true, it will not override releases the assets, only drafts (need to test too)
+ * IF reuseDraftOnly is false and reuseRelease is true, it will override releases and draft assets (test too)
+ * ISSUE: publish-release seems not to replace the asset: https://github.com/remixz/publish-release/issues/24
+ */
 release.on('reuse-release', () => {
   console.log(`Reuse release - the assets will be uploaded to an existing one`)
 })
