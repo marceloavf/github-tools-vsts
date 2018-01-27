@@ -87,13 +87,14 @@ options.apiUrl = 'https://api.github.com' // Use a custom API URL to connect to 
 
 /**
  * Start the release
+ * TODO: Release URL only works if it's not draft release
  */
 const release = publishRelease(options, (err, release) => {
   if (err) {
     tl.debug(err)
     return false
   }
-  tl.debug(`Finish - Release URL: ${release.url}`)
+  console.log(`Finish - Release URL: ${release.url}`)
 })
 
 release.on('error', existingError => {
@@ -108,7 +109,7 @@ release.on('error', existingError => {
  * TODO: dynamic 'github.com' url since you can change API URL with parameters
  */
 release.on('created-release', () => {
-  tl.debug(
+  console.log(
     `Release created successfully at
     https://github.com/${options.owner}/${options.repo}/releases/tag/${
   options.tag
@@ -117,11 +118,11 @@ release.on('created-release', () => {
 })
 
 release.on('reuse-release', () => {
-  tl.debug(`Reuse release - the assets will be uploaded to an existing one`)
+  console.log(`Reuse release - the assets will be uploaded to an existing one`)
 })
 
 release.on('upload-progress', (name, progress) => {
-  tl.debug(
+  console.log(
     `Uploading asset ${name} - ${Math.floor(
       progress.percentage
     )}% - ${bytesToSize(progress.speed)}/s`
