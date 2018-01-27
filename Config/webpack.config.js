@@ -52,7 +52,6 @@ let mainConfig = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    new UglifyJsPlugin(),
     // Copy the images folder and optimize all the images
     new CopyWebpackPlugin([
       {
@@ -60,13 +59,33 @@ let mainConfig = {
         to: '[path][name].[ext]',
         ignore: ['**/node_modules/**', '**/*.js']
       }
-    ]),
-    // Optimize all images on copy
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+    ])
   ],
   resolve: {
     extensions: ['.js', '.json', '.node']
   }
+}
+
+/**
+ * Adjust mainConfig for development settings
+ */
+if (process.env.NODE_ENV !== 'production') {
+  mainConfig.plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+  )
+}
+
+/**
+ * Adjust mainConfig for production settings
+ */
+if (process.env.NODE_ENV === 'production') {
+  mainConfig.plugins.push(
+    new UglifyJsPlugin(),
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    })
+  )
 }
 
 module.exports = mainConfig
