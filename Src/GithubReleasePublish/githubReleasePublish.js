@@ -33,26 +33,26 @@ const manifestOptions = readManifest(manifestJson)
  */
 let options = {}
 options.token =
-  githubEndpointToken || process.env.GITHUB_TOKEN || process.env.GH_TOKEN // or you can set an env var called GITHUB_TOKEN instead
+  githubEndpointToken || process.env.GITHUB_TOKEN || process.env.GH_TOKEN // Or you can set an env var called GITHUB_TOKEN instead
 options.owner =
   (githubRepository && githubRepository[0]) ||
-  manifestOptions.owner || // if missing, it will be extracted from manifest (the repository.url field)
+  manifestOptions.owner || // If missing, it will be extracted from manifest (the repository.url field)
   undefined
 options.repo =
   (githubRepository && githubRepository[1]) ||
-  manifestOptions.repo || // if missing, it will be extracted from manifest (the repository.url field)
+  manifestOptions.repo || // If missing, it will be extracted from manifest (the repository.url field)
   undefined
 options.tag =
   githubTag ||
-  (manifestOptions && `v${manifestOptions.version}`) || // if missing, the version will be extracted from manifest and prepended by a 'v'
+  (manifestOptions && `v${manifestOptions.version}`) || // If missing, the version will be extracted from manifest and prepended by a 'v'
   undefined
 options.name = githubReleaseTitle || options.tag || undefined // if missing, it will be the same as the tag
-options.notes = githubReleaseNotes || undefined // if missing it will be left undefined
-options.draft = githubReleaseDraft || false // if missing it's false
-options.prerelease = githubReleasePrerelease || false // if missing it's false
-options.reuseRelease = true // if you don't want the plugin to create a new release if one already exists for the given tag.
-options.reuseDraftOnly = true // if you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
-options.assets = [githubReleaseAsset] // assets array
+options.notes = githubReleaseNotes || undefined // If missing it will be left undefined
+options.draft = githubReleaseDraft || false // If missing it's false
+options.prerelease = githubReleasePrerelease || false // If missing it's false
+options.reuseRelease = true // If you don't want the plugin to create a new release if one already exists for the given tag.
+options.reuseDraftOnly = true // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
+options.assets = [githubReleaseAsset] // Assets array
 options.apiUrl = 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
 
 /**
