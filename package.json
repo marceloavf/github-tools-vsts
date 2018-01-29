@@ -5,15 +5,11 @@
     "prebuild": "vsts-build-tools-prebuild",
     "lint": "eslint Src",
     "test": "npm run lint",
-    "dev:webpack":
-      "webpack --progress --colors --config Config/webpack.config.js",
-    "dev":
-      "npm run dev:webpack && node Tasks/GithubReleasePublish/githubReleasePublish.js",
-    "dev:debug":
-      "npm run dev:webpack && node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
+    "dev:webpack": "webpack --progress --colors --config Config/webpack.config.js",
+    "dev": "npm run dev:webpack && node Tasks/GithubReleasePublish/githubReleasePublish.js",
+    "dev:debug": "npm run dev:webpack && node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
     "build": "node Config/build.js",
-    "package":
-      "npm run build && npm run clean && vsts-build-tools-package --noversiontransform"
+    "package": "npm run build && npm run clean && vsts-build-tools-package --noversiontransform"
   },
   "devDependencies": {
     "@types/fs-extra": "^4.0.0",
@@ -41,6 +37,7 @@
     "imagemin-webpack-plugin": "^1.6.1",
     "multispinner": "^0.2.1",
     "npm-run-all": "2.3.0",
+    "typescript": "^2.6.2",
     "path": "^0.12.7",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "webpack": "^3.10.0"
