@@ -38,8 +38,8 @@
     "uri": "https://github.com/marceloavf/github-tools-vsts"
   },
   "branding": {
-    "color": "#F9F6FF",
-    "theme": "light"
+    "color": "#5558af",
+    "theme": "dark"
   },
   "files": [
     {
