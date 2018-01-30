@@ -15,6 +15,13 @@
   },
   "demands": ["npm"],
   "instanceNameFormat": "Create GitHub Release",
+  "groups": [
+    {
+        "name": "advanced",
+        "displayName": "Advanced",
+        "isExpanded": false
+    }
+  ],
   "inputs": [
     {
       "name": "githubEndpoint",
@@ -24,14 +31,6 @@
       "required": true,
       "helpMarkDown":
         "Select the service endpoint for your GitHub connection. <br>To create one, click the Manage link and create a new service endpoint."
-    },
-    {
-      "name": "manifestJson",
-      "type": "filePath",
-      "label": "Package.json",
-      "defaultValue": "",
-      "helpMarkDown":
-        "File from which default values will be extracted if options are missing."
     },
     {
       "name": "githubRepository",
@@ -94,6 +93,51 @@
       "label": "File to upload as asset",
       "required": true,
       "helpMarkDown": "The file to upload as artifacts to the release."
+    },
+    {
+      "name": "manifestJson",
+      "type": "filePath",
+      "label": "Package.json",
+      "defaultValue": "",
+      "helpMarkDown":
+        "File from which default values will be extracted if options are missing."
+    },
+    {
+      "groupName": "advanced",
+      "name": "githubReuseRelease",
+      "type": "boolean",
+      "label": "Reuse Release",
+      "defaultValue": "true",
+      "required": true,
+      "helpMarkDown": "Allow to reuse a release with the same tag"
+    },
+    {
+      "groupName": "advanced",
+      "name": "githubReuseDraftOnly",
+      "type": "boolean",
+      "label": "Reuse only Draft Release",
+      "defaultValue": "true",
+      "required": true,
+      "helpMarkDown":
+        "Allow to only reuse a release if it's draft. Prevents you from editing already published releases"
+    },
+    {
+      "groupName": "advanced",
+      "name": "githubTargetCommitsh",
+      "type": "string",
+      "label": "Target Commitsh",
+      "defaultValue": "",
+      "helpMarkDown":
+        "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. <br> Defaults to the default branch of the repository"
+    },
+    {
+      "groupName": "advanced",
+      "name": "githubApiUrl",
+      "type": "string",
+      "label": "API URL",
+      "defaultValue": "",
+      "helpMarkDown":
+        "You can use a custom API URL to connect to GitHub Enterprise instead of github.com. <br>Defaults to 'https://api.github.com'"
     }
   ],
   "sourceDefinitions": [

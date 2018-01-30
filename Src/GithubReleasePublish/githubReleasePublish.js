@@ -16,10 +16,14 @@ const githubRepository = tl.getInput('githubRepository')
 const githubTag = tl.getInput('githubTag')
 const githubReleaseTitle = tl.getInput('githubReleaseTitle')
 const githubReleaseNotes = tl.getInput('githubReleaseNotes')
+const githubApiUrl = tl.getInput('githubApiUrl')
+const githubTargetCommitsh = tl.getInput('githubTargetCommitsh')
 
 /** Booleans */
 const githubReleaseDraft = tl.getBoolInput('githubReleaseDraft')
 const githubReleasePrerelease = tl.getBoolInput('githubReleasePrerelease')
+const githubReuseRelease = tl.getBoolInput('githubReuseRelease')
+const githubReuseDraftOnly = tl.getBoolInput('githubReuseDraftOnly')
 
 /** Paths */
 const manifestJson = tl.getPathInput('manifestJson')
@@ -50,10 +54,11 @@ options.name = githubReleaseTitle || options.tag || undefined // if missing, it 
 options.notes = githubReleaseNotes || undefined // If missing it will be left undefined
 options.draft = githubReleaseDraft || false // If missing it's false
 options.prerelease = githubReleasePrerelease || false // If missing it's false
-options.reuseRelease = true // If you don't want the plugin to create a new release if one already exists for the given tag.
-options.reuseDraftOnly = true // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
+options.reuseRelease = githubReuseRelease || true // If you don't want the plugin to create a new release if one already exists for the given tag.
+options.reuseDraftOnly = githubReuseDraftOnly || true // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
 options.assets = [githubReleaseAsset] // Assets array
-options.apiUrl = 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
+options.apiUrl = githubApiUrl || 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
+options.target_commitish = githubTargetCommitsh || 'master' // Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA.
 
 /**
  * Start the release
