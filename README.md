@@ -8,7 +8,7 @@ GitHub Tools
 
 <h4 align="center">
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-extension.svg)](https://david-dm.org/marceloavf/github-tools-extension)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts.svg)](https://david-dm.org/marceloavf/github-tools-extension)
 
 </h4>
 
