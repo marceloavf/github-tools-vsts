@@ -1,7 +1,6 @@
 'use strict'
 
-process.env.NODE_ENV = 'production'
-
+const path = require('path')
 const { say } = require('cfonts')
 const chalk = require('chalk')
 const del = require('del')
@@ -16,13 +15,25 @@ const isCI = process.env.CI || false
 /** The main build tasks */
 const mainConfig = require('./webpack.config')
 
+/** Tasks */
+const githubReleasePublish = {
+  name: 'githubReleasePublish',
+  entry: {
+    'GithubReleasePublish/githubReleasePublish': path.join(
+      __dirname,
+      '../Src/GithubReleasePublish/githubReleasePublish.js'
+    )
+  },
+  ...mainConfig
+}
+
 if (process.env.BUILD_TARGET === 'clean') clean(true)
 else build()
 
 /** Clean the Tasks output folder */
 function clean (exit) {
   del.sync(['Tasks/*', '!Tasks/.gitkeep'])
-  console.log(`\n${doneLog} Clean\n`)
+  console.log(`\n${doneLog} Clean output\n`)
   if (exit) {
     process.exit()
   }
@@ -32,7 +43,7 @@ function build () {
   greeting()
   clean()
 
-  const tasks = ['main']
+  const tasks = ['githubReleasePublish']
   const m = new Multispinner(tasks, {
     preText: 'building',
     postText: 'process'
@@ -43,18 +54,20 @@ function build () {
   m.on('success', () => {
     process.stdout.write('\x1B[2J\x1B[0f')
     console.log(`\n\n${results}`)
-    console.log(`${okayLog} init ${chalk.yellow('`vsts-build-tools`')}\n`)
+    if (process.env.BUILD_TARGET === 'package') {
+      console.log(`${okayLog} init ${chalk.yellow('`vsts-build-tools`')}\n`)
+    }
     process.exit()
   })
 
-  pack(mainConfig)
+  pack(githubReleasePublish)
     .then(result => {
       results += result + '\n\n'
-      m.success('main')
+      m.success('githubReleasePublish')
     })
     .catch(err => {
-      m.error('main')
-      console.log(`\n  ${errorLog}failed to build tasks main process`)
+      m.error('githubReleasePublish')
+      console.log(`\n  ${errorLog}failed to build tasks githubReleasePublish process`)
       console.error(`\n${err}\n`)
       process.exit(1)
     })

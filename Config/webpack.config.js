@@ -10,12 +10,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 let mainConfig = {
-  entry: {
-    'GithubReleasePublish/githubReleasePublish': path.join(
-      __dirname,
-      '../Src/GithubReleasePublish/githubReleasePublish.js'
-    )
-  },
   output: {
     path: path.join(__dirname, '../Tasks'),
     libraryTarget: 'commonjs2',
