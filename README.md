@@ -4,10 +4,11 @@
 GitHub Tools
 <br>
 </h1>
-
-<h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.</h4>
+<h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-extension.svg)](https://david-dm.org/marceloavf/github-tools-extension)
+
+</h4>
 
 ## Contribute
 
