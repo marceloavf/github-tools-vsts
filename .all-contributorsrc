@@ -1,0 +1,24 @@
+{
+  "projectName": "github-tools-vsts",
+  "projectOwner": "marceloavf",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "marceloavf",
+      "name": "Marcelo Formentão",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5435657?v=4",
+      "profile": "https://www.github.com/marceloavf",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "infra"
+      ]
+    }
+  ]
+}
