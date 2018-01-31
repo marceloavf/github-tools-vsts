@@ -85,13 +85,22 @@
       "label": "Release as Pre-release",
       "defaultValue": "false",
       "required": true,
-      "helpMarkDown": "Release tagged as Pre-release"
+      "helpMarkDown": "Release tagged as Pre-release."
+    },
+    {
+      "name": "githubIgnoreAssets",
+      "type": "boolean",
+      "label": "Don't upload assets",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Skip uploading assets to this release."
     },
     {
       "name": "githubReleaseAsset",
       "type": "filePath",
       "label": "File to upload as asset",
       "required": true,
+      "visibleRule": "githubIgnoreAssets = false",
       "helpMarkDown": "The file to upload as artifacts to the release."
     },
     {
@@ -109,7 +118,7 @@
       "label": "Reuse Release",
       "defaultValue": "true",
       "required": true,
-      "helpMarkDown": "Allow to reuse a release with the same tag"
+      "helpMarkDown": "Allow to reuse a release with the same tag."
     },
     {
       "groupName": "advanced",
@@ -119,7 +128,7 @@
       "defaultValue": "true",
       "required": true,
       "helpMarkDown":
-        "Allow to only reuse a release if it's draft. Prevents you from editing already published releases"
+        "Allow to only reuse a release if it's draft. Prevents you from editing already published releases."
     },
     {
       "groupName": "advanced",
@@ -129,7 +138,7 @@
       "defaultValue": "false",
       "required": true,
       "helpMarkDown":
-        "Prevents the plugin to replace assets with the same name"
+        "Prevents the plugin to replace assets with the same name."
     },
     {
       "groupName": "advanced",
@@ -138,7 +147,7 @@
       "label": "Target Commitsh",
       "defaultValue": "",
       "helpMarkDown":
-        "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. <br> Defaults to the default branch of the repository"
+        "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. <br> Defaults to the default branch of the repository."
     },
     {
       "groupName": "advanced",
@@ -147,7 +156,7 @@
       "label": "API URL",
       "defaultValue": "",
       "helpMarkDown":
-        "You can use a custom API URL to connect to GitHub Enterprise instead of github.com. <br>Defaults to 'https://api.github.com'"
+        "You can use a custom API URL to connect to GitHub Enterprise instead of github.com. <br>Defaults to 'https://api.github.com'."
     }
   ],
   "sourceDefinitions": [
