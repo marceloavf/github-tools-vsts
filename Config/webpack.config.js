@@ -46,7 +46,6 @@ let mainConfig = {
   },
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
-    // Copy the images folder and optimize all the images
     new CopyWebpackPlugin([
       {
         from: path.join(__dirname, '../Src'),
