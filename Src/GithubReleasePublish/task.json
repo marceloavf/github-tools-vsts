@@ -26,7 +26,7 @@
     {
       "name": "githubEndpoint",
       "type": "connectedService:github",
-      "label": "GitHub connection",
+      "label": "GitHub Connection",
       "defaultValue": "",
       "required": true,
       "helpMarkDown":
@@ -54,7 +54,7 @@
     {
       "name": "githubReleaseTitle",
       "type": "string",
-      "label": "Release title",
+      "label": "Release Title",
       "defaultValue": "v$(Build.BuildNumber)",
       "helpMarkDown":
         "Release title. <br>If empty, it will be the same as the tag."
@@ -62,7 +62,7 @@
     {
       "name": "githubReleaseNotes",
       "type": "multiLine",
-      "label": "Release notes",
+      "label": "Release Notes",
       "defaultValue": "",
       "helpMarkDown":
         "Release notes. <br>If missing it will be left undefined.",
@@ -74,7 +74,7 @@
     {
       "name": "githubReleaseDraft",
       "type": "boolean",
-      "label": "Release as Draft",
+      "label": "Draft",
       "defaultValue": "true",
       "required": true,
       "helpMarkDown": "Release tagged as Draft. Uncheck this and pre-release to have a release tag."
@@ -82,7 +82,7 @@
     {
       "name": "githubReleasePrerelease",
       "type": "boolean",
-      "label": "Release as Pre-release",
+      "label": "Pre Release",
       "defaultValue": "false",
       "required": true,
       "helpMarkDown": "Release tagged as Pre-release. Uncheck this and draft to have a release tag."
@@ -90,23 +90,23 @@
     {
       "name": "githubIgnoreAssets",
       "type": "boolean",
-      "label": "Don't upload assets",
+      "label": "Ignore Assets",
       "defaultValue": "false",
       "required": true,
       "helpMarkDown": "Skip uploading assets to this release."
     },
     {
       "name": "githubReleaseAsset",
-      "type": "filePath",
-      "label": "File to upload as asset",
+      "type": "input",
+      "label": "Files to Upload as Assets",
       "required": true,
       "visibleRule": "githubIgnoreAssets = false",
-      "helpMarkDown": "The file to upload as artifacts to the release."
+      "helpMarkDown": "The file to upload as artifacts to the release. Minimatch patterns are supported. <br>For example: <strong>$(System.DefaultWorkingDirectory)/**/*.exe</strong>"
     },
     {
       "name": "manifestJson",
       "type": "filePath",
-      "label": "Package.json",
+      "label": "Manifest JSON",
       "defaultValue": "",
       "helpMarkDown":
         "File from which default values will be extracted if options are missing."
@@ -134,7 +134,7 @@
       "groupName": "advanced",
       "name": "githubSkipDuplicatedAssets",
       "type": "boolean",
-      "label": "Skip duplicated assets",
+      "label": "Skip Duplicated Assets",
       "defaultValue": "false",
       "required": true,
       "helpMarkDown":

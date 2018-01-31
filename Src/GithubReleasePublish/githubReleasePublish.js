@@ -1,6 +1,7 @@
 import readManifest from 'CommonNode/readManifest.js'
 import bytesToSize from 'CommonNode/bytesToSize.js'
 
+const glob = require('glob')
 const publishRelease = require('publish-release')
 const tl = require('vsts-task-lib/task')
 
@@ -29,10 +30,17 @@ const githubIgnoreAssets = tl.getBoolInput('githubIgnoreAssets')
 
 /** Paths */
 const manifestJson = tl.getPathInput('manifestJson')
-const githubReleaseAsset = tl.getPathInput('githubReleaseAsset')
+let githubReleaseAsset = tl.getPathInput('githubReleaseAsset')
 
 /** Check for options in manifest if they don't exists on input */
 const manifestOptions = readManifest(manifestJson)
+
+/** Check for one or multiples files into array
+ *  Accept wildcards to look for files
+ */
+if (githubReleaseAsset && !githubIgnoreAssets) {
+  githubReleaseAsset = glob.sync(githubReleaseAsset)
+}
 
 /**
  * Set all options
@@ -58,7 +66,7 @@ options.draft = githubReleaseDraft || false // If missing it's false
 options.prerelease = githubReleasePrerelease || false // If missing it's false
 options.reuseRelease = githubReuseRelease || true // If you don't want the plugin to create a new release if one already exists for the given tag.
 options.reuseDraftOnly = githubReuseDraftOnly || true // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
-options.assets = githubIgnoreAssets ? undefined : [githubReleaseAsset] // Assets array
+options.assets = githubIgnoreAssets ? undefined : githubReleaseAsset // Assets array
 options.apiUrl = githubApiUrl || 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
 options.target_commitish = githubTargetCommitsh || 'master' // Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA.
 options.skipDuplicatedAssets = githubSkipDuplicatedAssets || false // Prevent the plugin to replace assets with the same name. False by default.
