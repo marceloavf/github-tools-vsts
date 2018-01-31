@@ -24,6 +24,7 @@ const githubReleaseDraft = tl.getBoolInput('githubReleaseDraft')
 const githubReleasePrerelease = tl.getBoolInput('githubReleasePrerelease')
 const githubReuseRelease = tl.getBoolInput('githubReuseRelease')
 const githubReuseDraftOnly = tl.getBoolInput('githubReuseDraftOnly')
+const githubSkipDuplicatedAssets = tl.getBoolInput('githubSkipDuplicatedAssets')
 
 /** Paths */
 const manifestJson = tl.getPathInput('manifestJson')
@@ -59,6 +60,7 @@ options.reuseDraftOnly = githubReuseDraftOnly || true // If you only want to reu
 options.assets = [githubReleaseAsset] // Assets array
 options.apiUrl = githubApiUrl || 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
 options.target_commitish = githubTargetCommitsh || 'master' // Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA.
+options.skipDuplicatedAssets = githubSkipDuplicatedAssets || false // Prevent the plugin to replace assets with the same name. False by default.
 
 /**
  * Start the release
@@ -94,9 +96,8 @@ release.on('created-release', () => {
 
 /**
  * TODO: Analyse options to return the correct message, e.g.
- * IF reuseDraftOnly is true and reuseRelease is true, it will not override releases the assets, only drafts (need to test too)
- * IF reuseDraftOnly is false and reuseRelease is true, it will override releases and draft assets (test too)
- * ISSUE: publish-release seems not to replace the asset: https://github.com/remixz/publish-release/issues/24
+ * IF reuseDraftOnly is true and reuseRelease is true, it will not override releases the assets, only drafts
+ * IF reuseDraftOnly is false and reuseRelease is true, it will override releases and draft assets
  */
 release.on('reuse-release', () => {
   console.log(`Reuse release - the assets will be uploaded to an existing one`)
@@ -108,4 +109,17 @@ release.on('upload-progress', (name, progress) => {
       progress.percentage
     )}% - ${bytesToSize(progress.speed)}/s`
   )
+})
+
+release.on('duplicated-asset', (name) => {
+  console.log(`Found duplicated asset: ${name}`)
+  if (options.skipDuplicatedAssets) {
+    console.log('Skipping duplicated asset...')
+  } else {
+    console.log('Deleting duplicated asset...')
+  }
+})
+
+release.on('duplicated-asset-deleted', (name) => {
+  console.log(`Deleted duplicate asset: ${name}`)
 })

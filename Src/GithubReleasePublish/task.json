@@ -123,6 +123,16 @@
     },
     {
       "groupName": "advanced",
+      "name": "githubSkipDuplicatedAssets",
+      "type": "boolean",
+      "label": "Skip duplicated assets",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown":
+        "Prevents the plugin to replace assets with the same name"
+    },
+    {
+      "groupName": "advanced",
       "name": "githubTargetCommitsh",
       "type": "string",
       "label": "Target Commitsh",
