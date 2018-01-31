@@ -77,7 +77,7 @@
       "label": "Release as Draft",
       "defaultValue": "true",
       "required": true,
-      "helpMarkDown": "Release as Draft"
+      "helpMarkDown": "Release tagged as Draft. Uncheck this and pre-release to have a release tag."
     },
     {
       "name": "githubReleasePrerelease",
@@ -85,7 +85,7 @@
       "label": "Release as Pre-release",
       "defaultValue": "false",
       "required": true,
-      "helpMarkDown": "Release tagged as Pre-release."
+      "helpMarkDown": "Release tagged as Pre-release. Uncheck this and draft to have a release tag."
     },
     {
       "name": "githubIgnoreAssets",
