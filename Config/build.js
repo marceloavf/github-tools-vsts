@@ -1,5 +1,6 @@
 'use strict'
 
+const fs = require('fs')
 const path = require('path')
 const { say } = require('cfonts')
 const chalk = require('chalk')
@@ -9,6 +10,7 @@ const Multispinner = require('multispinner')
 
 const doneLog = chalk.bgGreen.black(' DONE ') + ' '
 const errorLog = chalk.bgRed.black(' ERROR ') + ' '
+const warningLog = chalk.bgYellow.black(' WARNING ') + ' '
 const okayLog = chalk.bgBlue.black(' OKAY ') + ' '
 const isCI = process.env.CI || false
 
@@ -29,6 +31,21 @@ const githubReleasePublish = {
 
 /** Tasks to execute */
 const tasksExecute = [githubReleasePublish]
+
+/** Check if node_modules exists */
+tasksExecute.forEach((el) => {
+  const folder = Object.values(el.entry)[0].split('\\').slice(0, -1).join('\\') + '\\'
+  try {
+    fs.statSync(folder + 'node_modules')
+  } catch (e) {
+    console.log(`\n${warningLog} Not found node_modules in ${el.name}. Executing npm inside...\n`)
+    require('check-dependencies').sync({
+      packageManager: 'npm',
+      packageDir: folder,
+      install: true
+    })
+  }
+})
 
 if (process.env.BUILD_TARGET === 'clean') clean(true)
 else build()
