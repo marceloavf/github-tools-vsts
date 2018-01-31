@@ -27,23 +27,17 @@ const githubReleasePublish = {
   ...mainConfig
 }
 
+/** Tasks to execute */
+const tasksExecute = [githubReleasePublish]
+
 if (process.env.BUILD_TARGET === 'clean') clean(true)
 else build()
-
-/** Clean the Tasks output folder */
-function clean (exit) {
-  del.sync(['Tasks/*', '!Tasks/.gitkeep'])
-  console.log(`\n${doneLog} Clean output\n`)
-  if (exit) {
-    process.exit()
-  }
-}
 
 function build () {
   greeting()
   clean()
 
-  const tasks = ['githubReleasePublish']
+  const tasks = tasksExecute.map((item) => item.name)
   const m = new Multispinner(tasks, {
     preText: 'building',
     postText: 'process'
@@ -60,19 +54,31 @@ function build () {
     process.exit()
   })
 
-  pack(githubReleasePublish)
-    .then(result => {
-      results += result + '\n\n'
-      m.success('githubReleasePublish')
-    })
-    .catch(err => {
-      m.error('githubReleasePublish')
-      console.log(`\n  ${errorLog}failed to build tasks githubReleasePublish process`)
-      console.error(`\n${err}\n`)
-      process.exit(1)
-    })
+  tasksExecute.forEach((el) => {
+    pack(el)
+      .then(result => {
+        results += result + '\n\n'
+        m.success(`${el.name}`)
+      })
+      .catch(err => {
+        m.error(`${el.name}`)
+        console.log(`\n  ${errorLog}failed to build tasks ${el.name} process`)
+        console.error(`\n${err}\n`)
+        process.exit(1)
+      })
+  })
 }
 
+/** Clean the Tasks output folder */
+function clean (exit) {
+  del.sync(['Tasks/*', '!Tasks/.gitkeep'])
+  console.log(`\n${doneLog} Clean output\n`)
+  if (exit) {
+    process.exit()
+  }
+}
+
+/** Run webpack as promise */
 function pack (config) {
   return new Promise((resolve, reject) => {
     webpack(config, (err, stats) => {
@@ -103,6 +109,7 @@ function pack (config) {
   })
 }
 
+/** Show greeting messages */
 function greeting () {
   const cols = process.stdout.columns
   let text = ''
