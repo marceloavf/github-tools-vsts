@@ -32,9 +32,12 @@ export INPUT_MANIFESTJSON='xxxx\manifest.json'
 
 Then `yarn dev:debug`
 
+## Why?
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found this [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+
 ## Contribute
 
-If you have discovered a bug or have a feature suggestion, feel free to create an issue on Github.
+If you have discovered a bug or have a feature suggestion, feel free to create an issue on Github. Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/How-to-Report-an-issue)
 
 If you'd like to make some changes yourself, see the following:
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
@@ -43,6 +46,9 @@ If you'd like to make some changes yourself, see the following:
 4. Build the application: `yarn build`
 5. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
 6. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!
+
+## Known Issues
+Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Known-Issues)
 
 ## Contributors
 
