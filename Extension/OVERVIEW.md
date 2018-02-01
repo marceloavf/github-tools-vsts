@@ -8,6 +8,8 @@ GitHub Tool provide full implementation to Create and Modify GitHub Release to V
 
 ![create-modify-release](images/create-release-options.png)
 
+![task-create-modify-release](images/task-create-release.png)
+
 Options include:
 
 - **GitHub Connection:** Connect to a service endpoint for your GitHub Connection.
