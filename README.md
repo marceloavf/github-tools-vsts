@@ -8,9 +8,27 @@ GitHub Tools
 
 <h4 align="center">
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts.svg)](https://david-dm.org/marceloavf/github-tools-vsts)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts)
 
 </h4>
+
+## Debug
+
+[vsts-task-lib](https://github.com/Microsoft/vsts-task-lib/blob/master/node/docs/vsts-task-lib.md) allow to pass properties, running on development and debugging errors. The base script is `yarn dev:debug`, creating a connection with chrome devtools, for example.
+
+To it work properly, you first need to export options, for example:
+
+```
+export INPUT_GITHUBENDPOINT='EP'
+export ENDPOINT_URL_EP='https://www.github.com/'
+export ENDPOINT_AUTH_EP='{"parameters":{"accessToken":"*****"}}'
+export INPUT_GITHUBREPOSITORY='owner/repository'
+export INPUT_GITHUBTAG='v0.0.0'
+export INPUT_GITHUBRELEASETITLE='v0.0.0'
+export INPUT_GITHUBRELEASEDRAFT=True/False
+export INPUT_GITHUBRELEASEASSET='xxxx\**\*.png'
+export INPUT_MANIFESTJSON='xxxx\manifest.json'
+```
 
 ## Contribute
 
@@ -19,7 +37,7 @@ If you have discovered a bug or have a feature suggestion, feel free to create a
 If you'd like to make some changes yourself, see the following:
 1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
 2. Make sure yarn is globally installed (`npm install -g yarn`)
-3. Run `yarn` to download required packages.
+3. Run `yarn` to download required packages
 4. Build the application: `yarn build`
 5. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
 6. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!

@@ -2,8 +2,8 @@
   "manifestVersion": 1,
   "id": "github-tools",
   "version": "0.0.0",
-  "name": "GitHub Tools",
-  "description": "Create and modify GitHub Releases in VSTS",
+  "name": "GitHub Tool",
+  "description": "Create or modify GitHub Release, allowing to upload assets, check manifest content and more.",
   "publisher": "marcelo-formentao",
   "public": "true",
   "icons": {
@@ -15,7 +15,7 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "tags": ["GitHub", "Modify Release", "Release"],
+  "tags": ["GitHub", "Modify", "Create", "Release"],
   "categories": ["Build and release"],
   "content": {
     "license": {

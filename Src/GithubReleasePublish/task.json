@@ -1,12 +1,13 @@
 {
   "id": "0E54B1DE-2C34-4ACD-B93D-0FA1B9730BBE",
   "name": "GitHubReleasePublish",
-  "friendlyName": "Create GitHub Release",
+  "friendlyName": "Create or Modify GitHub Release",
+  "instanceNameFormat": "Create or Modify GitHub Release",
   "description":
-    "Create and publish GitHub Release and upload assets, checking manifest content",
+    "Create or modify GitHub Release, allowing to upload assets, check manifest content and more.",
   "author": "Marcelo Formentão",
   "helpMarkDown":
-    "[More Information](https://github.com/marceloavf/github-tools-vsts)",
+    "[More Information](https://github.com/marceloavf/github-tools-vsts) (Version #{Version}#).",
   "category": "Utility",
   "version": {
     "Major": 0,
@@ -14,7 +15,6 @@
     "Patch": 0
   },
   "demands": ["npm"],
-  "instanceNameFormat": "Create GitHub Release",
   "groups": [
     {
         "name": "advanced",
