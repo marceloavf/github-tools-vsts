@@ -31,6 +31,8 @@ Advanced Options include:
 - **Target Commitsh:** Specifies the commitsh value that determines where the Git tag is created from. Can be any branch or commit SHA. Defaults to the default branch of the repository.
 - **API URL:** Allow to use a custom API URL to connect to GitHub Enterprise instead of github.com. Defaults to 'https://api.github.com'.
 
+> Modify will only be valid if the release has the same tag as the other one, and you have to allow Reuse Release or/and Reuse only Draft Release.
+
 ## Known Issues
 Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Known-Issues)
 
