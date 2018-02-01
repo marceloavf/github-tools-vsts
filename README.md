@@ -5,7 +5,8 @@ GitHub Tool
 <br>
 </h1>
 <h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.</h4>
-<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management.</p>
+<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management. [Learn More](https://github.com/marceloavf/github-tools-vsts/wiki)
+</p>
 <h4 align="center">
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts)
@@ -33,8 +34,7 @@ export INPUT_MANIFESTJSON='xxxx\manifest.json'
 Then `yarn dev:debug`
 
 ## Why?
-I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds. [Learn More](https://github.com/marceloavf/github-tools-vsts/wiki)
-
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
 ## Contribute
 
 If you have discovered a bug or have a feature suggestion, feel free to create an issue on Github. Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/How-to-Report-an-issue)
