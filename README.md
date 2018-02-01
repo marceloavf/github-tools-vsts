@@ -33,7 +33,7 @@ export INPUT_MANIFESTJSON='xxxx\manifest.json'
 Then `yarn dev:debug`
 
 ## Why?
-I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds. [Learn More](https://github.com/marceloavf/github-tools-vsts/wiki)
 
 ## Contribute
 
