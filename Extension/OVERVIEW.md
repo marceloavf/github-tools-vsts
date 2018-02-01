@@ -30,3 +30,12 @@ Advanced Options include:
 - **Skip Duplicated Assets:** Check to prevent the plugin to replace assets with the same name.
 - **Target Commitsh:** Specifies the commitsh value that determines where the Git tag is created from. Can be any branch or commit SHA. Defaults to the default branch of the repository.
 - **API URL:** Allow to use a custom API URL to connect to GitHub Enterprise instead of github.com. Defaults to 'https://api.github.com'.
+
+## Known Issues
+Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Known-Issues)
+
+## Learn More
+The [source](https://github.com/marceloavf/github-tools-vsts) for this extension is on GitHub. Take a look at [contributing section](https://github.com/marceloavf/github-tools-vsts#contribute), fork, and extend.
+
+## Release Notes
+Please refer to our [release page on Github](https://github.com/marceloavf/github-tools-vsts/releases)
