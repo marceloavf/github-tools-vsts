@@ -4,7 +4,7 @@ GitHub Tool provide full implementation to Create and Modify GitHub Release to V
 
 # Tasks included
 
-- **Create or Modify GitHub Release:** Create or modify GitHub Release, allowing to upload assets, check manifest content and more.
+- [**Create or Modify GitHub Release:**](https://github.com/marceloavf/github-tools-vsts/wiki#create-or-modify-github-release-task) Create or modify GitHub Release, allowing to upload assets, check manifest content and more.
 
 ![create-modify-release](images/create-release-options.png)
 
