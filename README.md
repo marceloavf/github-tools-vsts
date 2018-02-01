@@ -14,7 +14,7 @@ GitHub Tools
 
 ## Debug
 
-[vsts-task-lib](https://github.com/Microsoft/vsts-task-lib/blob/master/node/docs/vsts-task-lib.md) allow to pass properties, running on development and debugging errors. The base script is `yarn dev:debug`, creating a connection with chrome devtools, for example.
+[vsts-task-lib](https://github.com/Microsoft/vsts-task-lib/blob/master/node/docs/vsts-task-lib.md) allow to pass properties running on development and debugging errors. The base script is `yarn dev:debug`, creating a connection with chrome devtools.
 
 To it work properly, you first need to export options, for example:
 
@@ -29,6 +29,8 @@ export INPUT_GITHUBRELEASEDRAFT=True/False
 export INPUT_GITHUBRELEASEASSET='xxxx\**\*.png'
 export INPUT_MANIFESTJSON='xxxx\manifest.json'
 ```
+
+Then `yarn dev:debug`
 
 ## Contribute
 
