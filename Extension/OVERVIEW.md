@@ -2,7 +2,11 @@
 
 GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management.
 
-![create-modify-release](screenshots/create-release-options.png)
+# Tasks included
+
+- **Create or Modify GitHub Release:** Create or modify GitHub Release, allowing to upload assets, check manifest content and more.
+
+![create-modify-release](images/create-release-options.png)
 
 Options include:
 
