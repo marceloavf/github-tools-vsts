@@ -5,7 +5,7 @@ GitHub Tool
 <br>
 </h1>
 <h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.</h4>
-<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management. [Learn More](https://github.com/marceloavf/github-tools-vsts/wiki)
+<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management. <a href="https://github.com/marceloavf/github-tools-vsts/wiki">Learn More</a>
 </p>
 <h4 align="center">
 
