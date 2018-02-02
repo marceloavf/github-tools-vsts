@@ -9,7 +9,7 @@ GitHub Tool
 </p>
 <h4 align="center">
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts) [![VS Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) [![VS Marketplace Installs](https://vsmarketplacebadge.apphb.com/installs/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) ![License](https://img.shields.io/github/license/marceloavf/github-tools-vsts.svg)
 
 </h4>
 
