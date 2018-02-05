@@ -81,15 +81,13 @@ const release = publishRelease(options, (err, release) => {
     tl.debug(err)
     return false
   }
-  console.log(`Finish - Release URL: ${release.url}`)
+  if (release && release.url) {
+    console.log(`Finish - Release URL: ${release.url}`)
+  }
 })
 
 release.on('error', existingError => {
-  if (existingError instanceof Error) {
-    tl.debug('error', existingError)
-  } else {
-    tl.debug('error', new Error(JSON.stringify(existingError)))
-  }
+  tl.debug(`error:\n ${existingError}`)
 })
 
 /**
