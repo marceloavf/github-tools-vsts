@@ -1,6 +1,4 @@
 # mode: Mainline
-assembly-versioning-scheme: MajorMinorPatch
-assembly-file-versioning-scheme: MajorMinorPatchTag
 tag-prefix: '[vV]'
 major-version-bump-message: '.*BREAKING CHANGE:.*?' # Check if commits uses BREAKING CHANGE: to bump major
 minor-version-bump-message: '(?i)feat(\(.+\))?:' # Check if commits uses feat: or feat(module): to bump minor
