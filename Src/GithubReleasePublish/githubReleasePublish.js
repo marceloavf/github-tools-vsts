@@ -78,8 +78,7 @@ options.skipAssetsCheck = githubIgnoreAssets || false // Don't check if assets e
  */
 const release = publishRelease(options, (err, release) => {
   if (err) {
-    tl.debug(err)
-    return false
+    tl.setResult(tl.TaskResult.Failed, `An error occured, log returned: \n${err}`)
   }
   if (release && release.url) {
     console.log(`Finish - Release URL: ${release.url}`)
@@ -87,7 +86,7 @@ const release = publishRelease(options, (err, release) => {
 })
 
 release.on('error', existingError => {
-  tl.debug(`error:\n ${existingError}`)
+  tl.setResult(tl.TaskResult.Failed, `An error occured, log returned: \n${existingError}`)
 })
 
 /**
