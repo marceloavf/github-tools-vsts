@@ -80,8 +80,11 @@ const release = publishRelease(options, (err, release) => {
   if (err) {
     tl.setResult(tl.TaskResult.Failed, `An error occured, log returned: \n${err}`)
   }
-  if (release && release.url) {
+  // Url of draft release doesn't exist
+  if (release && release.url && !release.draft) {
     console.log(`Finish - Release URL: ${release.url}`)
+  } else {
+    console.log(`Finish draft release`)
   }
 })
 
@@ -89,16 +92,22 @@ release.on('error', existingError => {
   tl.setResult(tl.TaskResult.Failed, `An error occured, log returned: \n${existingError}`)
 })
 
+release.on('create-release', () => {
+  console.log('Creating release')
+})
+
 /**
  * TODO: dynamic 'github.com' url since you can change API URL with parameters
  */
 release.on('created-release', () => {
-  console.log(
-    `Release created successfully at
-    https://github.com/${options.owner}/${options.repo}/releases/tag/${
-  options.tag
-}`
-  )
+  if (!options.draft) {
+    console.log(
+      `Release created successfully at
+      https://github.com/${options.owner}/${options.repo}/releases/tag/${options.tag}`
+    )
+  } else {
+    console.log(`Draft release created successfully`)
+  }
 })
 
 /**
