@@ -1,4 +1,6 @@
 {
+  "name": "github-tools-vsts",
+  "version": "0.1.49",
   "scripts": {
     "clean": "vsts-build-tools-clean",
     "postinstall": "vsts-build-tools-install",
