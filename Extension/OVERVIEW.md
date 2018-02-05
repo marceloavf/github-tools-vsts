@@ -2,7 +2,7 @@
 
 GitHub Tool provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management.
 
-# Tasks included
+## Tasks included
 
 - [**Create or Modify GitHub Release:**](https://github.com/marceloavf/github-tools-vsts/wiki#create-or-modify-github-release-task) Create or modify GitHub Release, allowing to upload assets, check manifest content and more.
 
@@ -33,11 +33,23 @@ Advanced Options include:
 
 > Modify will only be valid if the release has the same tag as the other one, and you have to allow Reuse Release or/and Reuse only Draft Release.
 
+
+## Modify
+
+### Overwrite assets
+
+1. The release tag option should have the same tag of the release you want to change
+2. The assets should have the same name to replace.
+3. Leave unchecked `Skip Duplicated Assets` inside `Advanced` options.
+
 ## Known Issues
+
 Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Known-Issues)
 
 ## Learn More
+
 The [source](https://github.com/marceloavf/github-tools-vsts) for this extension is on GitHub. Take a look at [contributing section](https://github.com/marceloavf/github-tools-vsts#contribute), fork, and extend.
 
 ## Release Notes
+
 Please refer to our [release page on Github](https://github.com/marceloavf/github-tools-vsts/releases)
