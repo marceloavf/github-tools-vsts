@@ -1,0 +1,14 @@
+# mode: Mainline
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatchTag
+tag-prefix: '[vV]'
+major-version-bump-message: '.*BREAKING CHANGE:.*?' # Check if commits uses BREAKING CHANGE: to bump major
+minor-version-bump-message: '(?i)feat(\(.+\))?:' # Check if commits uses feat: or feat(module): to bump minor
+patch-version-bump-message: '(?i)fix(\(.+\))?:' # Check if commits uses fix: or fix(module): to bump patch
+no-bump-message: '^((?!.*BREAKING CHANGE|fix|feat).)*$|fix\s*?(\(\))|feat\s*?(\(\))'
+legacy-semver-padding: 4
+build-metadata-padding: 4
+commits-since-version-source-padding: 4
+commit-message-incrementing: Enabled
+ignore:
+  sha: []
