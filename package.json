@@ -1,6 +1,6 @@
 {
   "name": "github-tools-vsts",
-  "version": "0.1.49",
+  "version": "0.1.50",
   "release": {
     "verifyConditions": [
       "@semantic-release/changelog",
@@ -22,7 +22,10 @@
       },
       {
         "path": "@semantic-release/git",
-        "assets": ["package.json", "CHANGELOG.md"],
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
         "message": "chore(release): ${nextRelease.version} [skip ci] ***NO_CI***\n\n${nextRelease.notes}"
       },
       "@semantic-release/github"
