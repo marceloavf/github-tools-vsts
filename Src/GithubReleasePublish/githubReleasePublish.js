@@ -116,7 +116,11 @@ release.on('created-release', () => {
  * IF reuseDraftOnly is false and reuseRelease is true, it will override releases and draft assets
  */
 release.on('reuse-release', () => {
-  console.log(`Reuse release - the assets will be uploaded to an existing one`)
+  if (options.skipDuplicatedAssets) {
+    console.log(`Reuse release - duplicated assets will not be overwrite`)
+  } else {
+    console.log(`Reuse release - duplicated assets will be overwrite`)
+  }
 })
 
 release.on('upload-progress', (name, progress) => {
