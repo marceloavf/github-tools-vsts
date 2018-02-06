@@ -2932,9 +2932,9 @@ git-url-parse@^8.0.0:
   dependencies:
     git-up "^2.0.0"
 
-gl-vsts-tasks-build-scripts@^0.4.0-alpha.4:
-  version "0.4.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/gl-vsts-tasks-build-scripts/-/gl-vsts-tasks-build-scripts-0.4.0-alpha.4.tgz#8c1a56b54635906382a72eddfdf0e71507bf7759"
+gl-vsts-tasks-build-scripts@^0.4.0-beta.0:
+  version "0.4.0-beta.0"
+  resolved "https://registry.yarnpkg.com/gl-vsts-tasks-build-scripts/-/gl-vsts-tasks-build-scripts-0.4.0-beta.0.tgz#4ec5c17abd9c82b22d50f412ee51b2dff8a79474"
 
 glob-base@^0.3.0:
   version "0.3.0"
