@@ -33,7 +33,6 @@
   },
   "scripts": {
     "clean": "vsts-build-tools-clean",
-    "postinstall": "vsts-build-tools-install",
     "prebuild": "vsts-build-tools-prebuild",
     "lint": "eslint Src",
     "test": "npm run lint",
