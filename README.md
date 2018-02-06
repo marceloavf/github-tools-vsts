@@ -9,7 +9,8 @@ GitHub Tool
 </p>
 <h4 align="center">
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts) [![VS Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) [![VS Marketplace Installs](https://vsmarketplacebadge.apphb.com/installs/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) ![License](https://img.shields.io/github/license/marceloavf/github-tools-vsts.svg) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Dependency Status](https://david-dm.org/marceloavf/github-tools-vsts/dev-status.svg)](https://david-dm.org/marceloavf/github-tools-vsts) 
+![Visual Studio Team services](https://img.shields.io/vso/build/precisaosistemas/bdc79f70-6107-4e5b-9455-73bbd6bc0f22/115.svg) [![GitHub release](https://img.shields.io/github/release/marceloavf/github-tools-vsts.svg)](https://github.com/marceloavf/github-tools-vsts/releases) [![VS Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) [![VS Marketplace Installs](https://vsmarketplacebadge.apphb.com/installs/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools)
 
 </h4>
 
@@ -44,8 +45,9 @@ If you'd like to make some changes yourself, see the following:
 2. Make sure yarn is globally installed (`npm install -g yarn`)
 3. Run `yarn` to download required packages
 4. Build the application: `yarn build`
-5. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
-6. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!
+5. Follow [Commit message guidelines](https://github.com/semantic-release/semantic-release/blob/caribou/CONTRIBUTING.md#commit-message-guidelines) from Semantic-release
+6. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
+7. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!
 
 ## Known Issues
 Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Known-Issues)
