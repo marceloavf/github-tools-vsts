@@ -74,7 +74,6 @@ options.skipAssetsCheck = githubIgnoreAssets || false // Don't check if assets e
 
 /**
  * Start the release
- * TODO: Release URL only works if it's not draft release (draft doesn't have a tag)
  */
 const release = publishRelease(options, (err, release) => {
   if (err) {
