@@ -1,3 +1,11 @@
+<a name="0.1.52"></a>
+## [0.1.52](https://github.com/marceloavf/github-tools-vsts/compare/v0.1.51...v0.1.52) (2018-02-08)
+
+
+### Bug Fixes
+
+* allow to delete multiple duplicated assets [#13](https://github.com/marceloavf/github-tools-vsts/issues/13) ([583101d](https://github.com/marceloavf/github-tools-vsts/commit/583101d))
+
 <a name="0.1.51"></a>
 ## [0.1.51](https://github.com/marceloavf/github-tools-vsts/compare/v0.1.50...v0.1.51) (2018-02-06)
 
