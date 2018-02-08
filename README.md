@@ -14,6 +14,10 @@ GitHub Tool
 
 </h4>
 
+## Tasks included
+
+- [**Create or Modify GitHub Release:**](https://github.com/marceloavf/github-tools-vsts/wiki#create-or-modify-github-release-task) Create or modify GitHub Release, allowing to upload assets, check manifest content and more.
+
 ![create-modify-release](https://github.com/marceloavf/github-tools-vsts/blob/master/Extension/images/create-release-options.png)
 
 ![task-create-modify-release](https://github.com/marceloavf/github-tools-vsts/blob/master/Extension/images/task-create-release.png)
