@@ -1,3 +1,11 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.1.52...v0.2.0) (2018-02-08)
+
+
+### Features
+
+* remove dev-dependency and fix version number ([55283b8](https://github.com/marceloavf/github-tools-vsts/commit/55283b8))
+
 <a name="0.1.52"></a>
 ## [0.1.52](https://github.com/marceloavf/github-tools-vsts/compare/v0.1.51...v0.1.52) (2018-02-08)
 
