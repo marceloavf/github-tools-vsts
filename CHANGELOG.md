@@ -1,3 +1,16 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.2.0...v0.3.0) (2018-02-19)
+
+
+### Bug Fixes
+
+* **task:** some options don't change to false ([e0165f4](https://github.com/marceloavf/github-tools-vsts/commit/e0165f4))
+
+
+### Features
+
+* **task:** new options to edit release and delete empty tags ([a9b131f](https://github.com/marceloavf/github-tools-vsts/commit/a9b131f))
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.1.52...v0.2.0) (2018-02-08)
 
