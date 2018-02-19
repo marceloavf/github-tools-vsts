@@ -62,15 +62,17 @@ options.tag =
   undefined
 options.name = githubReleaseTitle || options.tag || undefined // if missing, it will be the same as the tag
 options.notes = githubReleaseNotes || undefined // If missing it will be left undefined
-options.draft = githubReleaseDraft || false // If missing it's false
-options.prerelease = githubReleasePrerelease || false // If missing it's false
-options.reuseRelease = githubReuseRelease || true // If you don't want the plugin to create a new release if one already exists for the given tag.
-options.reuseDraftOnly = githubReuseDraftOnly || true // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
+options.draft = !!githubReleaseDraft // If missing it's false
+options.prerelease = !!githubReleasePrerelease // If missing it's false
+options.reuseRelease = !!githubReuseRelease // If you don't want the plugin to create a new release if one already exists for the given tag.
+options.reuseDraftOnly = !!githubReuseDraftOnly // If you only want to reuse a release if it's a draft. It prevents you from editing already published releases.
 options.assets = githubIgnoreAssets ? undefined : githubReleaseAsset // Assets array
 options.apiUrl = githubApiUrl || 'https://api.github.com' // Use a custom API URL to connect to GitHub Enterprise instead of github.com.
 options.target_commitish = githubTargetCommitsh || 'master' // Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA.
-options.skipDuplicatedAssets = githubSkipDuplicatedAssets || false // Prevent the plugin to replace assets with the same name. False by default.
-options.skipAssetsCheck = githubIgnoreAssets || false // Don't check if assets exist or not. False by default.
+options.skipDuplicatedAssets = !!githubSkipDuplicatedAssets // Prevent the plugin to replace assets with the same name. False by default.
+options.skipAssetsCheck = !!githubIgnoreAssets // Don't check if assets exist or not. False by default.
+options.editRelease = !!githubEditRelease // Allow to edit release name, notes, type and target_commitsh
+options.deleteEmptyTag = !!githubDeleteEmptyTag // Delete tag if it's editing from prerelease or release to draft
 
 /**
  * Start the release
