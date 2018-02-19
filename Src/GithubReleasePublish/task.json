@@ -142,6 +142,26 @@
     },
     {
       "groupName": "advanced",
+      "name": "githubEditRelease",
+      "type": "boolean",
+      "label": "Edit Release",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown":
+        "Allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info](https://github.com/marceloavf/github-tools-vsts#edit-release)."
+    },
+    {
+      "groupName": "advanced",
+      "name": "githubDeleteEmptyTag",
+      "type": "boolean",
+      "label": "Delete Empty Tag",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown":
+        "Delete tag if it's editing release type from `prerelease` or `release` to `draft`."
+    },
+    {
+      "groupName": "advanced",
       "name": "githubTargetCommitsh",
       "type": "string",
       "label": "Target Commitsh",

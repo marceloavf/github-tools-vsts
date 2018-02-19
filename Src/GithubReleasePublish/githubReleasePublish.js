@@ -1,5 +1,8 @@
 import readManifest from 'CommonNode/readManifest.js'
 import bytesToSize from 'CommonNode/bytesToSize.js'
+import objectDifference from 'CommonNode/objectDifference.js'
+
+let editObject
 
 const glob = require('glob')
 const publishRelease = require('publish-release')
@@ -27,6 +30,8 @@ const githubReuseRelease = tl.getBoolInput('githubReuseRelease')
 const githubReuseDraftOnly = tl.getBoolInput('githubReuseDraftOnly')
 const githubSkipDuplicatedAssets = tl.getBoolInput('githubSkipDuplicatedAssets')
 const githubIgnoreAssets = tl.getBoolInput('githubIgnoreAssets')
+const githubEditRelease = tl.getBoolInput('githubEditRelease')
+const githubDeleteEmptyTag = tl.getBoolInput('githubDeleteEmptyTag')
 
 /** Paths */
 const manifestJson = tl.getPathInput('manifestJson')
@@ -143,4 +148,20 @@ release.on('duplicated-asset', (name) => {
 
 release.on('duplicated-asset-deleted', (name) => {
   console.log(`Deleted duplicate asset: ${name}`)
+})
+
+release.on('edit-release', (obj) => {
+  editObject = obj
+  console.log(`Release will be edited: \n name: ${obj.name} \n tag: ${obj.tag_name}`)
+})
+
+release.on('edited-release', (newObj) => {
+  if (editObject) {
+    console.log(`Differences output:`)
+    console.log(objectDifference(editObject, newObj))
+  }
+})
+
+release.on('deleted-tag-release', (name) => {
+  console.log(`Deleted tag: ${name}`)
 })

@@ -28,19 +28,30 @@ Advanced Options include:
 - **Reuse Release:** Check to allow to reuse a release with the same tag.
 - **Reuse only Draft Release:** Check to allow to reuse only draft release. Prevents from editing already published releases.
 - **Skip Duplicated Assets:** Check to prevent the plugin to replace assets with the same name.
+- **Edit Release** Check to allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info](https://github.com/marceloavf/github-tools-vsts#edit-release)
+- **Delete Empty Tag** Check to delete tag if it's editing release type from `prerelease` or `release` to `draft`
 - **Target Commitsh:** Specifies the commitsh value that determines where the Git tag is created from. Can be any branch or commit SHA. Defaults to the default branch of the repository.
 - **API URL:** Allow to use a custom API URL to connect to GitHub Enterprise instead of github.com. Defaults to 'https://api.github.com'.
 
-> Modify will only be valid if the release has the same tag as the other one, and you have to allow Reuse Release or/and Reuse only Draft Release.
-
+> Modify will only be valid if the release has the same tag as the other one, and you have to allow Reuse Release or/and Reuse only Draft Release
 
 ## Modify
 
 ### Overwrite assets
 
-1. The release tag option should have the same tag of the release you want to change
+1. The release tag option should have the same tag of the release you want to change.
 2. The assets should have the same name to replace.
 3. Leave unchecked `Skip Duplicated Assets` inside `Advanced` options.
+
+### Edit release
+
+This option allow to edit release properties based on `tag name`, changing the release name, notes, type (`draft, prerelease, release`) and target commitsh.
+
+1. The release tag option should have the same tag of the release you want to change.
+2. Write different name, notes, target commitsh or change the type of the release.
+3. Check `Edit Release` inside `Advanced` options.
+
+> Tip: `Delete Empty Tag` option allow to prevent an empty tag (without release) by deleting it when you edit release type from `prerelease` or `release` to `draft`
 
 ## Known Issues
 

@@ -89,6 +89,8 @@
     "url": "https://github.com/marceloavf/github-tools-vsts/issues"
   },
   "dependencies": {
-    "@semantic-release/changelog": "^1.0.0"
+    "@semantic-release/changelog": "^1.0.0",
+    "deep-object-diff": "^1.1.0",
+    "js-object-pretty-print": "^0.3.0"
   }
 }
