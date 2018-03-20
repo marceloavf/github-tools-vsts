@@ -41,4 +41,5 @@ Gruntfile.js
 
 !tslint/lib/test
 !istanbul/lib/assets
+!nyc/**/assets
 !svgo/.svgo.yml
