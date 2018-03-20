@@ -1,3 +1,16 @@
+<a name="0.3.2"></a>
+## [0.3.2](https://github.com/marceloavf/github-tools-vsts/compare/v0.3.1...v0.3.2) (2018-03-20)
+
+
+### Bug Fixes
+
+* **task.json:** change jsonpath ([9cd4d3d](https://github.com/marceloavf/github-tools-vsts/commit/9cd4d3d))
+
+
+### Reverts
+
+* **task.json:** change jsonpath for github repositories ([c989d17](https://github.com/marceloavf/github-tools-vsts/commit/c989d17))
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/marceloavf/github-tools-vsts/compare/v0.3.0...v0.3.1) (2018-03-19)
 

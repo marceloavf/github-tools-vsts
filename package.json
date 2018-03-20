@@ -1,6 +1,6 @@
 {
   "name": "github-tools-vsts",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "release": {
     "verifyConditions": [
       "@semantic-release/changelog",
