@@ -1,3 +1,11 @@
+<a name="0.3.3"></a>
+## [0.3.3](https://github.com/marceloavf/github-tools-vsts/compare/v0.3.2...v0.3.3) (2018-03-20)
+
+
+### Bug Fixes
+
+* **bytestosize:** remove extra parenthesis ([678d2ab](https://github.com/marceloavf/github-tools-vsts/commit/678d2ab))
+
 <a name="0.3.2"></a>
 ## [0.3.2](https://github.com/marceloavf/github-tools-vsts/compare/v0.3.1...v0.3.2) (2018-03-20)
 
