@@ -107,5 +107,9 @@
       },
       "@semantic-release/github"
     ]
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
   }
 }
