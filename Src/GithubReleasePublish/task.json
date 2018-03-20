@@ -184,8 +184,8 @@
       "target": "githubRepository",
       "endpoint":
         "/$(system.teamProject)/_apis/sourceProviders/GitHub/repositories?serviceEndpointId=$(githubEndpoint)",
-      "selector": "jsonpath:$.value[*].id",
-      "keySelector": "jsonpath:$.value[*].id",
+      "selector": "jsonpath:$.repositories[*].id",
+      "keySelector": "jsonpath:$.repositories[*].id",
       "authKey": "tfs:teamfoundation"
     }
   ],
