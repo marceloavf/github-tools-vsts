@@ -33,6 +33,14 @@
         "Select the service endpoint for your GitHub connection. <br>To create one, click the Manage link and create a new service endpoint."
     },
     {
+      "name": "manuallySetRepository",
+      "type": "boolean",
+      "label": "Manually Set Repository",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Manually set Owner and Repository name instead of using the pick list bellow."
+    },
+    {
       "name": "githubRepository",
       "type": "pickList",
       "label": "Repository",
@@ -43,14 +51,6 @@
       "properties": {
         "DisableManageLink": "True"
       }
-    },
-    {
-      "name": "manuallySetRepository",
-      "type": "boolean",
-      "label": "Manually Set Repository",
-      "defaultValue": "false",
-      "required": true,
-      "helpMarkDown": "Manually set Owner and Repository name instead of using the pick list above."
     },
     {
       "name": "githubOwner",
