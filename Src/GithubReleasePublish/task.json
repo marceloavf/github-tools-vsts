@@ -37,11 +37,40 @@
       "type": "pickList",
       "label": "Repository",
       "defaultValue": "",
+      "visibleRule": "manuallySetRepository = false",
       "helpMarkDown":
         "Name of the GitHub repository. <br>If empty, it will be extracted from <strong>package.json</strong> (the repository.url field).",
       "properties": {
         "DisableManageLink": "True"
       }
+    },
+    {
+      "name": "manuallySetRepository",
+      "type": "boolean",
+      "label": "Manually Set Repository",
+      "defaultValue": "false",
+      "required": true,
+      "helpMarkDown": "Manually set Owner and Repository name instead of using the pick list above."
+    },
+    {
+      "name": "githubOwner",
+      "type": "string",
+      "label": "Owner",
+      "defaultValue": "",
+      "required": true,
+      "visibleRule": "manuallySetRepository = true",
+      "helpMarkDown":
+        "Owner name of the repository. <br>If empty, the owner will be extracted from <strong>package.json</strong>."
+    },
+    {
+      "name": "githubRepositoryName",
+      "type": "string",
+      "label": "Repository",
+      "defaultValue": "",
+      "required": true,
+      "visibleRule": "manuallySetRepository = true",
+      "helpMarkDown":
+        "Name of the repository. <br>If empty, the repository name will be extracted from <strong>package.json</strong>."
     },
     {
       "name": "githubTag",

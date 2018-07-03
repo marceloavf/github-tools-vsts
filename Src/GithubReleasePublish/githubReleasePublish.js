@@ -17,6 +17,8 @@ const githubEndpointToken = tl.getEndpointAuthorization(githubEndpoint)
 const githubRepository = tl.getInput('githubRepository')
   ? tl.getInput('githubRepository').split('/')
   : null
+const githubOwner = tl.getInput('githubOwner')
+const githubRepositoryName = tl.getInput('githubRepositoryName')
 const githubTag = tl.getInput('githubTag')
 const githubReleaseTitle = tl.getInput('githubReleaseTitle')
 const githubReleaseNotes = tl.getInput('githubReleaseNotes')
@@ -24,6 +26,7 @@ const githubApiUrl = tl.getInput('githubApiUrl')
 const githubTargetCommitsh = tl.getInput('githubTargetCommitsh')
 
 /** Booleans */
+const manuallySetRepository = tl.getBoolInput('manuallySetRepository')
 const githubReleaseDraft = tl.getBoolInput('githubReleaseDraft')
 const githubReleasePrerelease = tl.getBoolInput('githubReleasePrerelease')
 const githubReuseRelease = tl.getBoolInput('githubReuseRelease')
@@ -54,11 +57,13 @@ let options = {}
 options.token =
   githubEndpointToken || process.env.GITHUB_TOKEN || process.env.GH_TOKEN // Or you can set an env var called GITHUB_TOKEN instead
 options.owner =
-  (githubRepository && githubRepository[0]) ||
+  (!manuallySetRepository && githubRepository && githubRepository[0]) ||
+  githubOwner ||
   manifestOptions.owner || // If missing, it will be extracted from manifest (the repository.url field)
   undefined
 options.repo =
-  (githubRepository && githubRepository[1]) ||
+  (!manuallySetRepository && githubRepository && githubRepository[1]) ||
+  githubRepositoryName ||
   manifestOptions.repo || // If missing, it will be extracted from manifest (the repository.url field)
   undefined
 options.tag =
