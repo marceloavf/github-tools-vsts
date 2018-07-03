@@ -1,3 +1,11 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/marceloavf/github-tools-vsts/compare/v0.4.0...v0.4.1) (2018-07-03)
+
+
+### Bug Fixes
+
+* change task definition input order ([c7368f9](https://github.com/marceloavf/github-tools-vsts/commit/c7368f9))
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.3.4...v0.4.0) (2018-07-03)
 
