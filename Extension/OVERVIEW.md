@@ -21,14 +21,14 @@ Options include:
 - **Pre Release:** Check to release tagged as Pre Release.
 - **Ignore Assets:** Check to skip upload assets to release.
 - **Files to Upload as Assets:** Include files to upload as artifacts to release. Minimatch pattern are supported.
-- **Manifest JSON:** Include the manifest file from which default values will be extracted if options are missing.
+- **Manifest JSON:** Include the manifest file from which default values will be extracted if options are missing. [More Info.](https://github.com/marceloavf/github-tools-vsts#manifest-file)
 
 Advanced Options include:
 
 - **Reuse Release:** Check to allow to reuse a release with the same tag.
 - **Reuse only Draft Release:** Check to allow to reuse only draft release. Prevents from editing already published releases.
 - **Skip Duplicated Assets:** Check to prevent the plugin to replace assets with the same name.
-- **Edit Release** Check to allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info](https://github.com/marceloavf/github-tools-vsts#edit-release)
+- **Edit Release** Check to allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info.](https://github.com/marceloavf/github-tools-vsts#edit-release)
 - **Delete Empty Tag** Check to delete tag if it's editing release type from `prerelease` or `release` to `draft`
 - **Target Commitsh:** Specifies the commitsh value that determines where the Git tag is created from. Can be any branch or commit SHA. Defaults to the default branch of the repository.
 - **API URL:** Allow to use a custom API URL to connect to GitHub Enterprise instead of github.com. Defaults to 'https://api.github.com'.
@@ -52,6 +52,22 @@ This option allow to edit release properties based on `tag name`, changing the r
 3. Check `Edit Release` inside `Advanced` options.
 
 > Tip: `Delete Empty Tag` option allow to prevent an empty tag (without release) by deleting it when you edit release type from `prerelease` or `release` to `draft`
+
+## More details
+
+### Manifest file
+
+The manifest is a json file (commonly called `package.json`) that include some information about your application, the GitHub Tool can extract these information when you indicate in `Manifest JSON` field where json file is located. Your json should be like this example below.
+
+```json
+{ 
+   "version": "2.0.0", 
+   "repository": { 
+     "type": "git", 
+     "url": "https://github.com/owner/repo" 
+  } 
+} 
+```
 
 ## Known Issues
 
