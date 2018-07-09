@@ -59,7 +59,7 @@ Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/
 
 ## Learn More
 
-The [source](https://github.com/marceloavf/github-tools-vsts) for this extension is on GitHub. Take a look at [contributing section](https://github.com/marceloavf/github-tools-vsts#contribute), fork, and extend.
+The [source](https://github.com/marceloavf/github-tools-vsts) for this extension is on GitHub. Take a look at [contributing section](https://github.com/marceloavf/github-tools-vsts#contribute), fork and extend.
 
 ## Release Notes
 

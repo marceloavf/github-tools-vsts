@@ -65,46 +65,21 @@ This option allow to edit release properties based on `tag name`, changing the r
 
 > Tip: `Delete Empty Tag` option allow to prevent an empty tag (without release) by deleting it when you edit release type from `prerelease` or `release` to `draft`
 
+## Why?
+
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+
 ## Install the extension to your account
 
 You can find the latest stable version of the VSTS Extension tasks on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools).
 
 ## Debug
 
-[vsts-task-lib](https://github.com/Microsoft/vsts-task-lib/blob/master/node/docs/vsts-task-lib.md) allow to pass properties running on development and debugging errors. The base script is `yarn dev:debug`, creating a connection with chrome devtools.
-
-To it work properly, you first need to export options, for example:
-
-```
-export INPUT_GITHUBENDPOINT='EP'
-export ENDPOINT_URL_EP='https://www.github.com/'
-export ENDPOINT_AUTH_EP='{"parameters":{"accessToken":"*****"}}'
-export INPUT_GITHUBREPOSITORY='owner/repository'
-export INPUT_GITHUBTAG='v0.0.0'
-export INPUT_GITHUBRELEASETITLE='v0.0.0'
-export INPUT_GITHUBRELEASEDRAFT=True/False
-export INPUT_GITHUBRELEASEASSET='xxxx\**\*.png'
-export INPUT_MANIFESTJSON='xxxx\manifest.json'
-```
-
-Then `yarn dev:debug`
-
-## Why?
-
-I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+Please refer to our debug [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/Debug)
 
 ## Contribute
 
-If you have discovered a bug or have a feature suggestion, feel free to create an issue on Github. Please refer to our [wiki page](https://github.com/marceloavf/github-tools-vsts/wiki/How-to-Report-an-issue)
-
-If you'd like to make some changes yourself, see the following:
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Make sure yarn is globally installed (`npm install -g yarn`)
-3. Run `yarn` to download required packages
-4. Build the application: `yarn build`
-5. Follow [Commit message guidelines](https://github.com/semantic-release/semantic-release/blob/caribou/CONTRIBUTING.md#commit-message-guidelines) from Semantic-release
-6. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
-7. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!
+Contributions, issues and feature requests are very welcome. Please make sure to read the [Contributing Guide](/CONTRIBUTING.md) before making a pull request.
 
 ## Known Issues
 
