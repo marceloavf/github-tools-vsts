@@ -3,6 +3,7 @@ import bytesToSize from 'CommonNode/bytesToSize.js'
 import objectDifference from 'CommonNode/objectDifference.js'
 
 let editObject
+let githubEndpointToken
 
 const glob = require('glob')
 const publishRelease = require('publish-release')
@@ -10,8 +11,7 @@ const tl = require('vsts-task-lib/task')
 
 /** Endpoint */
 const githubEndpoint = tl.getInput('githubEndpoint')
-const githubEndpointToken = tl.getEndpointAuthorization(githubEndpoint)
-  .parameters.accessToken
+const githubEndpointObject = tl.getEndpointAuthorization(githubEndpoint)
 
 /** Inputs */
 const githubRepository = tl.getInput('githubRepository')
@@ -42,6 +42,17 @@ let githubReleaseAsset = tl.getPathInput('githubReleaseAsset')
 
 /** Check for options in manifest if they don't exists on input */
 const manifestOptions = readManifest(manifestJson)
+
+/**
+ * Get specific token, either OAuth or Personal Access Token
+ * WARNING: AccessToken first letter change depending on scheme
+ */
+if (githubEndpointObject.scheme === 'PersonalAccessToken') {
+  githubEndpointToken = githubEndpointObject.parameters.accessToken
+} else {
+  // scheme: 'OAuth'
+  githubEndpointToken = githubEndpointObject.parameters.AccessToken
+}
 
 /** Check for one or multiples files into array
  *  Accept wildcards to look for files
