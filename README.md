@@ -24,7 +24,7 @@ GitHub Tool
 
 Options include:
 
-- **GitHub Connection:** Connect to a service endpoint for your GitHub Connection.
+- **GitHub Connection:** Connect to a service endpoint for your GitHub Connection. [More Info.](https://github.com/marceloavf/github-tools-vsts#github-connection)
 - **Repository:** List all repositories based on Endpoint. If empty, it will be extracted from manifest file.
 - **Tag:** Create a tag to release. If empty, the version will be extracted from manifest file.
 - **Release Title:** Create a title to release. If empty, it will be the same as tag.
@@ -80,6 +80,23 @@ The manifest is a json file (commonly called `package.json`) that include some i
   } 
 } 
 ```
+
+### GitHub Connection
+
+This option is one of the mandatory fields to allow GitHub Tool interact with GitHub API. For this, you have two options to create this connection:
+
+#### 1. Authorize using OAuth
+
+This service provides you direct and fast connection with GitHub authentication. If you need to modify some access and grant new authorizations you will have to access your GitHub acoount, go to `Settings` > `Applications` > `Authorized OAuth Apps`, found `Visual Studio Team Services` and modify permissions and organization access.
+
+#### 2. Authorize with a GitHub personal access token
+
+This option needs a personal access token from GitHub, you can create it by going to your GitHub account, `Settings` > `Developer settings` > `Personal access tokens` and click on `Generate New Token`.
+
+| Scope  | Description |
+| ------------- | ------------- |
+| repo  | Allow access to private repositories  |
+| public_repo  | Allow access to public repositories  |
 
 ## Why?
 
