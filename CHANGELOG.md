@@ -1,3 +1,11 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.4.1...v0.5.0) (2018-07-09)
+
+
+### Features
+
+* allow GitHub OAuth scheme authentication ([893215d](https://github.com/marceloavf/github-tools-vsts/commit/893215d)), closes [#17](https://github.com/marceloavf/github-tools-vsts/issues/17)
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/marceloavf/github-tools-vsts/compare/v0.4.0...v0.4.1) (2018-07-03)
 
