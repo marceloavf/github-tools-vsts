@@ -75,7 +75,7 @@ This option is one of the mandatory fields to allow GitHub Tool interact with Gi
 
 #### 1. Authorize using OAuth
 
-This service provides you direct and fast connection with GitHub authentication. If you need to modify some access and grant new authorizations you will have to access your GitHub acoount, go to `Settings` > `Applications` > `Authorized OAuth Apps`, found `Visual Studio Team Services` and modify permissions and organization access.
+This service provides you direct and fast connection with GitHub authentication. If you need to modify some access and grant new authorizations you will have to access your GitHub acoount, go to `Settings` > `Applications` > `Authorized OAuth Apps`, found `Azure DevOps` and modify permissions and organization access.
 
 #### 2. Authorize with a GitHub personal access token
 
