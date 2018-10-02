@@ -4,13 +4,13 @@
 GitHub Tool
 <br>
 </h1>
-<h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.</h4>
-<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management. <a href="https://github.com/marceloavf/github-tools-vsts/wiki">Learn More</a>
+<h4 align="center">Create and modify GitHub Releases. For Azure DevOps Builds and Releases.</h4>
+<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Azure DevOps Build and Release Management. <a href="https://github.com/marceloavf/github-tools-vsts/wiki">Learn More</a>
 </p>
 <h4 align="center">
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) ![with-coffee](https://img.shields.io/badge/made%20with-%E2%98%95%EF%B8%8F%20coffee-yellow.svg) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) 
-![Visual Studio Team services](https://img.shields.io/vso/build/precisaosistemas/bdc79f70-6107-4e5b-9455-73bbd6bc0f22/115.svg) [![GitHub release](https://img.shields.io/github/release/marceloavf/github-tools-vsts.svg)](https://github.com/marceloavf/github-tools-vsts/releases) [![VS Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) [![VS Marketplace Installs](https://vsmarketplacebadge.apphb.com/installs/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools)
+![Azure DevOps](https://img.shields.io/vso/build/precisaosistemas/bdc79f70-6107-4e5b-9455-73bbd6bc0f22/115.svg) [![GitHub release](https://img.shields.io/github/release/marceloavf/github-tools-vsts.svg)](https://github.com/marceloavf/github-tools-vsts/releases) [![VS Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools) [![VS Marketplace Installs](https://vsmarketplacebadge.apphb.com/installs/marcelo-formentao.github-tools.svg)](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools)
 
 </h4>
 
@@ -87,7 +87,7 @@ This option is one of the mandatory fields to allow GitHub Tool interact with Gi
 
 #### 1. Authorize using OAuth
 
-This service provides you direct and fast connection with GitHub authentication. If you need to modify some access and grant new authorizations you will have to access your GitHub acoount, go to `Settings` > `Applications` > `Authorized OAuth Apps`, found `Visual Studio Team Services` and modify permissions and organization access.
+This service provides you direct and fast connection with GitHub authentication. If you need to modify some access and grant new authorizations you will have to access your GitHub acoount, go to `Settings` > `Applications` > `Authorized OAuth Apps`, found `Azure DevOps` and modify permissions and organization access.
 
 #### 2. Authorize with a GitHub personal access token
 
@@ -100,11 +100,11 @@ This option needs a personal access token from GitHub, you can create it by goin
 
 ## Why?
 
-I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for Azure DevOps Releases and Builds.
 
 ## Install the extension to your account
 
-You can find the latest stable version of the VSTS Extension tasks on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools).
+You can find the latest stable version of the Azure DevOps Extension tasks on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools).
 
 ## Debug
 
@@ -124,7 +124,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars3.githubusercontent.com/u/5435657?v=4" width="100px;"/><br /><sub><b>Marcelo Formentão</b></sub>](https://github.com/marceloavf)<br />[💻](https://github.com/marceloavf/github-tools-vsts/commits?author=marceloavf "Code") [🎨](#design-marceloavf "Design") [📖](https://github.com/marceloavf/github-tools-vsts/commits?author=marceloavf "Documentation") [🤔](#ideas-marceloavf "Ideas, Planning, & Feedback") [🚇](#infra-marceloavf "Infrastructure (Hosting, Build-Tools, etc)") |
+| [<img src="https://avatars3.githubusercontent.com/u/5435657?v=4" width="100px;"/><br /><sub><b>Marcelo Formentão</b></sub>](https://github.com/marceloavf)<br />[💻](https://github.com/marceloavf/github-tools-Azure DevOps/commits?author=marceloavf "Code") [🎨](#design-marceloavf "Design") [📖](https://github.com/marceloavf/github-tools-Azure DevOps/commits?author=marceloavf "Documentation") [🤔](#ideas-marceloavf "Ideas, Planning, & Feedback") [🚇](#infra-marceloavf "Infrastructure (Hosting, Build-Tools, etc)") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

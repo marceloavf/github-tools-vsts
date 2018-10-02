@@ -31,7 +31,7 @@ MANDATORY FOR BUGS: Insert debug trace
 
 **Enviroment**
 
-* Service: [e.g. VSTS, TFS]
+* Service: [e.g. Azure DevOps, TFS]
 * Agent: [e.g. Hosted, Custom]
 * OS: [e.g. OSX 10.13.4, Windows 10]
 * Node/npm version: [e.g. Node 8/npm 5]
