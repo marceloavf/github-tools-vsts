@@ -1,6 +1,6 @@
 # GitHub Tool
 
-GitHub Tool provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management.
+GitHub Tool provide full implementation to Create and Modify GitHub Release to Azure DevOps Build and Release Management.
 
 ## Tasks included
 
