@@ -4,8 +4,8 @@
 GitHub Tool
 <br>
 </h1>
-<h4 align="center">Create and modify GitHub Releases. For VSTS Builds and Releases.</h4>
-<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Visual Studio Team Services Build and Release Management. <a href="https://github.com/marceloavf/github-tools-vsts/wiki">Learn More</a>
+<h4 align="center">Create and modify GitHub Releases. For Azure DevOps Builds and Releases.</h4>
+<p align="center">GitHub Tool Task provide full implementation to Create and Modify GitHub Release to Azure DevOps Build and Release Management. <a href="https://github.com/marceloavf/github-tools-vsts/wiki">Learn More</a>
 </p>
 <h4 align="center">
 
@@ -100,11 +100,11 @@ This option needs a personal access token from GitHub, you can create it by goin
 
 ## Why?
 
-I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for VSTS Releases and Builds.
+I was disappointed with all the current GitHub extensions tools solutions. Most of them don't have most of the options GitHub can provide and don't are maintained anymore. So, I found [publish-release](https://github.com/remixz/publish-release) repository with almost every option that I need, helped them to finish some issues and use that to create this extension for Azure DevOps Releases and Builds.
 
 ## Install the extension to your account
 
-You can find the latest stable version of the VSTS Extension tasks on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools).
+You can find the latest stable version of the Azure DevOps Extension tasks on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=marcelo-formentao.github-tools).
 
 ## Debug
 
