@@ -3412,9 +3412,9 @@ git-url-parse@^8.0.0:
   dependencies:
     git-up "^2.0.0"
 
-gl-vsts-tasks-build-scripts@^0.4.0-beta.0:
+gl-Azure DevOps-tasks-build-scripts@^0.4.0-beta.0:
   version "0.4.0-beta.0"
-  resolved "https://registry.yarnpkg.com/gl-vsts-tasks-build-scripts/-/gl-vsts-tasks-build-scripts-0.4.0-beta.0.tgz#4ec5c17abd9c82b22d50f412ee51b2dff8a79474"
+  resolved "https://registry.yarnpkg.com/gl-Azure DevOps-tasks-build-scripts/-/gl-Azure DevOps-tasks-build-scripts-0.4.0-beta.0.tgz#4ec5c17abd9c82b22d50f412ee51b2dff8a79474"
 
 glob-base@^0.3.0:
   version "0.3.0"

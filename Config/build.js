@@ -66,7 +66,7 @@ function build () {
     process.stdout.write('\x1B[2J\x1B[0f')
     console.log(`\n\n${results}`)
     if (process.env.BUILD_TARGET === 'package') {
-      console.log(`${okayLog} init ${chalk.yellow('`vsts-build-tools`')}\n`)
+      console.log(`${okayLog} init ${chalk.yellow('`Azure DevOps-build-tools`')}\n`)
     }
     process.exit()
   })

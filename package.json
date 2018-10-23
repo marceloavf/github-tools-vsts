@@ -1,17 +1,17 @@
 {
-  "name": "github-tools-vsts",
+  "name": "github-tools-Azure DevOps",
   "version": "0.5.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marceloavf/github-tools-vsts"
+    "url": "https://github.com/marceloavf/github-tools-Azure DevOps"
   },
   "bugs": {
-    "url": "https://github.com/marceloavf/github-tools-vsts/issues"
+    "url": "https://github.com/marceloavf/github-tools-Azure DevOps/issues"
   },
   "scripts": {
-    "clean": "vsts-build-tools-clean",
-    "prebuild": "vsts-build-tools-prebuild",
+    "clean": "Azure DevOps-build-tools-clean",
+    "prebuild": "Azure DevOps-build-tools-prebuild",
     "lint": "eslint Src",
     "test:unit": "nyc ava -v",
     "test": "npm run lint && npm run test:unit",
@@ -19,7 +19,7 @@
     "dev": "cross-env BUILD_TARGET=githubReleasePublish node Config/build.js && node Tasks/GithubReleasePublish/githubReleasePublish.js",
     "dev:debug": "cross-env BUILD_TARGET=githubReleasePublish node Config/build.js && node --inspect-brk Tasks/GithubReleasePublish/githubReleasePublish.js",
     "build": "cross-env NODE_ENV=production node Config/build.js",
-    "package": "cross-env BUILD_TARGET=package npm run build && npm run clean && vsts-build-tools-package --noversiontransform",
+    "package": "cross-env BUILD_TARGET=package npm run build && npm run clean && Azure DevOps-build-tools-package --noversiontransform",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "semantic-release": "semantic-release"
@@ -57,7 +57,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "gl-vsts-tasks-build-scripts": "^0.4.0-beta.0",
+    "gl-Azure DevOps-tasks-build-scripts": "^0.4.0-beta.0",
     "imagemin-webpack-plugin": "^1.6.1",
     "multispinner": "^0.2.1",
     "npm-run-all": "2.3.0",

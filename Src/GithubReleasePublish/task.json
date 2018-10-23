@@ -7,7 +7,7 @@
     "Create or modify GitHub Release, allowing to upload assets, check manifest content and more.",
   "author": "Marcelo Formentão",
   "helpMarkDown":
-    "[More Information](https://github.com/marceloavf/github-tools-vsts) (Version #{Version}#).",
+    "[More Information](https://github.com/marceloavf/github-tools-Azure DevOps) (Version #{Version}#).",
   "category": "Utility",
   "version": {
     "Major": 0,
@@ -177,7 +177,7 @@
       "defaultValue": "false",
       "required": true,
       "helpMarkDown":
-        "Allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info](https://github.com/marceloavf/github-tools-vsts#edit-release)."
+        "Allow to edit release name, notes, type (`draft, prerelease, release`) and target commitsh. [More Info](https://github.com/marceloavf/github-tools-Azure DevOps#edit-release)."
     },
     {
       "groupName": "advanced",

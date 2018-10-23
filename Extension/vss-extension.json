@@ -27,15 +27,15 @@
   },
   "links": {
     "getstarted": {
-      "uri": "https://github.com/marceloavf/github-tools-vsts/wiki"
+      "uri": "https://github.com/marceloavf/github-tools-Azure DevOps/wiki"
     },
     "support": {
-      "uri": "https://github.com/marceloavf/github-tools-vsts/issues"
+      "uri": "https://github.com/marceloavf/github-tools-Azure DevOps/issues"
     }
   },
   "repository": {
     "type": "git",
-    "uri": "https://github.com/marceloavf/github-tools-vsts"
+    "uri": "https://github.com/marceloavf/github-tools-Azure DevOps"
   },
   "branding": {
     "color": "#5558af",

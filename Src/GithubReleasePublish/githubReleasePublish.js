@@ -7,7 +7,7 @@ let githubEndpointToken
 
 const glob = require('glob')
 const publishRelease = require('publish-release')
-const tl = require('vsts-task-lib/task')
+const tl = require('Azure DevOps-task-lib/task')
 
 /** Endpoint */
 const githubEndpoint = tl.getInput('githubEndpoint')
