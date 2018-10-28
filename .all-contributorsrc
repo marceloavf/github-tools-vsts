@@ -19,6 +19,16 @@
         "ideas",
         "infra"
       ]
+    },
+    {
+      "login": "heaths",
+      "name": "Heath Stewart",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1532486?v=4",
+      "profile": "https://blogs.msdn.microsoft.com/heaths/",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
