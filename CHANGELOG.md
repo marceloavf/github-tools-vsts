@@ -1,3 +1,16 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.5.0...v1.0.0) (2018-10-28)
+
+
+### Features
+
+* add support for multiple minimatch patterns ([#36](https://github.com/marceloavf/github-tools-vsts/issues/36)) ([43e238c](https://github.com/marceloavf/github-tools-vsts/commit/43e238c)), closes [#34](https://github.com/marceloavf/github-tools-vsts/issues/34)
+
+
+### BREAKING CHANGES
+
+* The assets upload input has been changed to multiLine type.
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/marceloavf/github-tools-vsts/compare/v0.4.1...v0.5.0) (2018-07-09)
 
