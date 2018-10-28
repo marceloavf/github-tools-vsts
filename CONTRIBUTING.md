@@ -8,5 +8,5 @@ If you'd like to make some changes yourself, see the following:
 3. Run `yarn` to download required packages
 4. Build the application: `yarn build`
 5. Follow [Commit message guidelines](https://github.com/semantic-release/semantic-release/blob/caribou/CONTRIBUTING.md#commit-message-guidelines) from Semantic-release
-6. If you contributed something new, run `yarn contrib:add <your GitHub username>` to add yourself [below](#contributors)
+6. If you contributed something new, run `yarn contributors:add <your GitHub username>` to add yourself [below](#contributors)
 7. Finally, submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) with your changes!

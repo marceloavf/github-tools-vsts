@@ -10,7 +10,7 @@
     "[More Information](https://github.com/marceloavf/github-tools-vsts) (Version #{Version}#).",
   "category": "Utility",
   "version": {
-    "Major": 0,
+    "Major": 1,
     "Minor": 0,
     "Patch": 0
   },
@@ -126,11 +126,11 @@
     },
     {
       "name": "githubReleaseAsset",
-      "type": "input",
+      "type": "multiLine",
       "label": "Files to Upload as Assets",
       "required": true,
       "visibleRule": "githubIgnoreAssets = false",
-      "helpMarkDown": "The file to upload as artifacts to the release. Minimatch patterns are supported. <br>For example: <strong>$(System.DefaultWorkingDirectory)/**/*.exe</strong>"
+      "helpMarkDown": "The files to upload as artifacts to the release. Multiple minimatch patterns are supported. [More information](https://aka.ms/minimatchexamples)"
     },
     {
       "name": "manifestJson",
