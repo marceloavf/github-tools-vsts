@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "publish-release": "^1.5.1",
-    "azure-pipelines-task-lib": "^2.7.1"
+    "azure-pipelines-task-lib": "^2.7.1",
+    "publish-release": "^1.6.1"
   }
 }
